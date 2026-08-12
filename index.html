@@ -336,12 +336,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
   }
 
   .brand-logo {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -359,12 +360,13 @@
   .brand-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    letter-spacing: 0.18em;
+    font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+    letter-spacing: 0.16em;
     color: var(--text-main);
     text-transform: uppercase;
     white-space: nowrap;
     display: inline-block;
+    flex-shrink: 0;
   }
 
   .brand-title span {
@@ -374,19 +376,22 @@
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 22px;
     list-style: none;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .nav-link {
     font-family: var(--font-sans);
     font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
     position: relative;
     padding: 8px 0;
+    white-space: nowrap;
     transition: color 0.3s ease;
   }
 
@@ -412,16 +417,20 @@
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .header-phone {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: var(--text-main);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: color 0.3s;
   }
 
@@ -1326,7 +1335,32 @@
   }
 
   /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    .nav-menu {
+      gap: 14px;
+    }
+    .nav-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+    .header-actions {
+      gap: 10px;
+    }
+    .header-phone {
+      font-size: 0.75rem;
+    }
+    #currentThemeLabel {
+      display: none;
+    }
+  }
+
   @media (max-width: 1024px) {
+    .nav-menu, .header-phone {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
     .metrics-bar {
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
@@ -1346,12 +1380,6 @@
   }
 
   @media (max-width: 768px) {
-    .nav-menu, .header-phone {
-      display: none;
-    }
-    .mobile-toggle {
-      display: flex;
-    }
     .ventures-grid {
       grid-template-columns: 1fr;
     }
