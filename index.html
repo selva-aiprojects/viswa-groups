@@ -1088,6 +1088,7 @@
     text-transform: uppercase;
     color: var(--gold-primary);
     margin-bottom: 6px;
+    margin-left: 14px;
   }
 
   .leader-name {
@@ -1096,6 +1097,7 @@
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--text-main);
+    margin-left: 14px;
   }
 
   .leader-quote {
@@ -1106,7 +1108,7 @@
     line-height: 1.6;
     margin-bottom: 20px;
     position: relative;
-    padding-left: 16px;
+    padding-left: 14px;
     border-left: 2px solid var(--gold-primary);
   }
 
@@ -1114,6 +1116,7 @@
     font-size: 0.9375rem;
     color: var(--text-muted);
     line-height: 1.6;
+    margin-left: 14px;
   }
 
   /* ===== VISION BAND ===== */
@@ -1215,6 +1218,14 @@
     display: flex;
     align-items: center;
     gap: 18px;
+  }
+
+  .contact-method-item:has(.social-links-grid) {
+    align-items: flex-start;
+  }
+
+  .contact-method-item:has(.social-links-grid) .contact-icon-box {
+    margin-top: 2px;
   }
 
   .contact-icon-box {
@@ -1773,6 +1784,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     transition: var(--transition);
   }
 
