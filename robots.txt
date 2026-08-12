@@ -1,0 +1,6 @@
+# Viswa Groups — Web Crawler Directives & Robots Policy
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://viswagroups.com/sitemap.xml
