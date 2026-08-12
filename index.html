@@ -1470,6 +1470,7 @@
     }
     .mobile-toggle {
       display: flex;
+      flex-shrink: 0;
     }
     .metrics-bar {
       grid-template-columns: repeat(2, 1fr);
@@ -1502,6 +1503,9 @@
   }
 
   @media (max-width: 768px) {
+    .header-actions .btn-primary {
+      display: none;
+    }
     .ventures-grid {
       grid-template-columns: 1fr;
     }
