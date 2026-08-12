@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viswa Groups | Real Estate, Developers &amp; Hospitality</title>
+<meta name="description" content="Viswa Groups — Building tomorrow, creating enduring value across Real Estate, Commercial Developments, and Luxury Hospitality.">
+<meta name="keywords" content="Viswa Groups, Viswa Real Estate, Viswa Developers, Viswa Hospitality, Luxury Real Estate, Commercial Buildings, Infrastructure, J Ragunandan, R Jeyaviswadarsan">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-dark: #0B0E14;
+    --bg-dark-surface: #121722;
+    --bg-dark-card: #182030;
+    --bg-light: #F8FAFC;
+    --bg-light-card: #FFFFFF;
+    --bg-accent-light: #F1F5F9;
+    
+    --gold-primary: #C5A059;
+    --gold-light: #E5C158;
+    --gold-dark: #997533;
+    --gold-gradient: linear-gradient(135deg, #E5C158 0%, #C5A059 50%, #997533 100%);
+    --gold-border: rgba(197, 160, 89, 0.3);
+
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --text-light: #F8FAFC;
+    --text-light-muted: #94A3B8;
+
+    --font-heading: 'Cinzel', serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 24px 60px -12px rgba(11, 14, 20, 0.15);
+    --shadow-glow: 0 0 35px rgba(197, 160, 89, 0.2);
+
+    --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Reset & Core */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  /* Layout Containers */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section-padding {
+    padding: 110px 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 70px 0;
+    }
+  }
+
+  /* Typography Utilities */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+    margin-bottom: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background: var(--gold-primary);
+  }
+
+  .heading-lg {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+  }
+
+  .heading-md {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .subheading {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin-top: 14px;
+  }
+
+  .text-gold {
+    color: var(--gold-primary);
+  }
+
+  /* Buttons & CTAs */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--gold-gradient);
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(197, 160, 89, 0.5);
+    background: linear-gradient(135deg, #ECC863 0%, #D4AF37 50%, #A68038 100%);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-light);
+    background: rgba(197, 160, 89, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-dark {
+    background: transparent;
+    border-color: var(--text-main);
+    color: var(--text-main);
+  }
+
+  .btn-outline-dark:hover {
+    background: var(--text-main);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .btn-icon {
+    transform: translateX(4px);
+  }
+
+  /* Focus outline accessibility */
+  :focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 4px;
+  }
+
+  /* ===== HEADER & NAVBAR ===== */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 22px 0;
+  }
+
+  .site-header.scrolled {
+    background: rgba(11, 14, 20, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+    padding: 14px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-logo img {
+    height: 44px;
+    width: auto;
+    transition: var(--transition);
+  }
+
+  .site-header.scrolled .brand-logo img {
+    height: 38px;
+  }
+
+  .brand-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.22em;
+    color: var(--text-light);
+    text-transform: uppercase;
+  }
+
+  .brand-title span {
+    color: var(--gold-primary);
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248, 250, 252, 0.8);
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold-gradient);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--gold-light);
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(248, 250, 252, 0.85);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .header-phone:hover {
+    color: var(--gold-primary);
+  }
+
+  .phone-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-primary);
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: var(--transition);
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding-top: 130px;
+    padding-bottom: 60px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.38) contrast(1.1);
+    transform: scale(1.03);
+    animation: zoomBg 25s ease-out infinite alternate;
+  }
+
+  @keyframes zoomBg {
+    0% { transform: scale(1.03); }
+    100% { transform: scale(1.12); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(circle at 70% 30%, rgba(11, 14, 20, 0.4) 0%, rgba(11, 14, 20, 0.92) 80%),
+                linear-gradient(to bottom, rgba(11, 14, 20, 0.6) 0%, #0B0E14 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 860px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    margin-bottom: 24px;
+  }
+
+  .hero-badge img {
+    height: 22px;
+    width: auto;
+  }
+
+  .hero-badge span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-style: italic;
+    color: rgba(248, 250, 252, 0.9);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    color: var(--text-light-muted);
+    max-width: 640px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Live Metrics Counter Bar */
+  .metrics-bar {
+    position: relative;
+    z-index: 3;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .metric-item {
+    text-align: left;
+  }
+
+  .metric-num {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .metric-num span {
+    font-size: 1.75rem;
+    color: var(--gold-primary);
+  }
+
+  .metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-light-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ===== CORPORATE LEGACY SECTION ===== */
+  .legacy-section {
+    background-color: var(--bg-light);
+    position: relative;
+  }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .legacy-quote-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 4px solid var(--gold-primary);
+    padding: 44px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+
+  .quote-icon {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    color: rgba(197, 160, 89, 0.15);
+  }
+
+  .legacy-quote-text {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 24px;
+  }
+
+  .legacy-quote-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .author-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-primary);
+  }
+
+  .author-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 700;
+  }
+
+  .author-info p {
+    font-size: 0.8125rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .pillar-card {
+    background: #FFFFFF;
+    padding: 32px 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold-border);
+  }
+
+  .pillar-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: rgba(197, 160, 89, 0.1);
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .pillar-icon-box svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pillar-title {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .pillar-desc {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* ===== VENTURES SHOWCASE ===== */
+  .ventures-section {
+    background-color: var(--bg-accent-light);
+    position: relative;
+  }
+
+  .ventures-header {
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto 50px;
+  }
+
+  .venture-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 12px 26px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .tab-btn:hover {
+    color: var(--gold-dark);
+    border-color: var(--gold-primary);
+  }
+
+  .tab-btn.active {
+    background: var(--bg-dark);
+    color: var(--gold-light);
+    border-color: var(--bg-dark);
+    box-shadow: 0 4px 16px rgba(11, 14, 20, 0.2);
+  }
+
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .venture-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .venture-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-border);
+  }
+
+  .venture-img-box {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .venture-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .venture-card:hover .venture-img-box img {
+    transform: scale(1.08);
+  }
+
+  .venture-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    background: rgba(11, 14, 20, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+  }
+
+  .venture-body {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .venture-num {
+    font-family: var(--font-heading);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+
+  .venture-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .venture-desc {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .venture-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+  }
+
+  .spec-item {
+    font-size: 0.8125rem;
+  }
+
+  .spec-label {
+    color: var(--text-muted);
+    display: block;
+  }
+
+  .spec-val {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .venture-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    letter-spacing: 0.05em;
+    transition: gap 0.3s ease;
+  }
+
+  .link-btn:hover {
+    gap: 10px;
+    color: var(--gold-primary);
+  }
+
+  /* ===== LEADERSHIP SECTION ===== */
+  .leadership-section {
+    background-color: var(--bg-light);
+  }
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .leader-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    transition: var(--transition);
+  }
+
+  .leader-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-border);
+  }
+
+  .leader-photo {
+    height: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .leader-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s ease;
+  }
+
+  .leader-card:hover .leader-photo img {
+    transform: scale(1.05);
+  }
+
+  .leader-content {
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .leader-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+
+  .leader-name {
+    font-family: var(--font-heading);
+    font-size: 1.625rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+  }
+
+  .leader-quote {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 16px;
+    border-left: 2px solid var(--gold-primary);
+  }
+
+  .leader-bio {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== VISION DARK BAND ===== */
+  .vision-band {
+    background: var(--bg-dark-surface);
+    color: var(--text-light);
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  }
+
+  .vision-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, rgba(11, 14, 20, 0) 70%);
+    pointer-events: none;
+  }
+
+  .vision-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .vision-statement {
+    font-family: var(--font-serif);
+    font-size: clamp(1.625rem, 3.2vw, 2.5rem);
+    font-style: italic;
+    line-height: 1.5;
+    color: #F1F5F9;
+    margin-top: 24px;
+    margin-bottom: 36px;
+  }
+
+  .vision-statement em {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    background-color: var(--bg-light);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info-card {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 48px 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gold-border);
+    position: relative;
+  }
+
+  .contact-info-card .eyebrow {
+    color: var(--gold-light);
+  }
+
+  .contact-info-card .eyebrow::before {
+    background: var(--gold-light);
+  }
+
+  .contact-info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-info-card p {
+    color: var(--text-light-muted);
+    margin-bottom: 36px;
+    font-size: 1rem;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-method-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .contact-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon-box svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-method-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-light-muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .contact-method-value {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    transition: color 0.3s;
+  }
+
+  .contact-method-value:hover {
+    color: var(--gold-light);
+  }
+
+  /* Contact Form Styling */
+  .contact-form-card {
+    background: #FFFFFF;
+    padding: 48px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 8px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg-accent-light);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    color: var(--text-main);
+    transition: var(--transition);
+  }
+
+  .form-control:focus {
+    outline: none;
+    background: #FFFFFF;
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.18);
+  }
+
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .form-toast {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: none;
+  }
+
+  .form-toast.success {
+    display: block;
+    background: #ECFDF5;
+    color: #047857;
+    border: 1px solid #A7F3D0;
+  }
+
+  /* ===== MODAL DIALOG ===== */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 14, 20, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-box {
+    background: #FFFFFF;
+    width: 90%;
+    max-width: 580px;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    transform: translateY(20px);
+    transition: var(--transition);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-backdrop.active .modal-box {
+    transform: translateY(0);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .modal-close:hover {
+    background: var(--bg-accent-light);
+    color: var(--text-main);
+  }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding-top: 80px;
+    padding-bottom: 40px;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand img {
+    height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .footer-brand p {
+    color: var(--text-light-muted);
+    font-size: 0.9375rem;
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    color: var(--text-light-muted);
+    font-size: 0.9375rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold-light);
+  }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: var(--text-light-muted);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .metrics-bar {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .grid-2col, .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .ventures-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .leadership-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu, .header-phone {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+    .ventures-grid {
+      grid-template-columns: 1fr;
+    }
+    .leader-card {
+      grid-template-columns: 1fr;
+    }
+    .leader-photo {
+      height: 280px;
+    }
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Mobile Nav Drawer */
+  .mobile-drawer {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-dark);
+    z-index: 1500;
+    padding: 100px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-drawer.active {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-drawer-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* Animations on Scroll */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#" class="brand-logo" aria-label="Viswa Groups Home">
+      <img src="assets/viswa_mark.png" alt="Viswa Groups Emblem">
+      <span class="brand-title">VISWA <span>GROUPS</span></span>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="#legacy" class="nav-link">Legacy</a></li>
+        <li><a href="#ventures" class="nav-link">Ventures</a></li>
+        <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        <li><a href="#vision" class="nav-link">Vision</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+919761111999" class="header-phone">
+        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 97611 11999
+      </a>
+      <button class="btn btn-primary" onclick="openModal('Inquiry')">Inquire Now</button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Menu">&times;</button>
+  <a href="#legacy" onclick="closeMobileNav()">Legacy</a>
+  <a href="#ventures" onclick="closeMobileNav()">Ventures</a>
+  <a href="#leadership" onclick="closeMobileNav()">Leadership</a>
+  <a href="#vision" onclick="closeMobileNav()">Vision</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <button class="btn btn-primary" onclick="closeMobileNav(); openModal('Inquiry')">Inquire Now</button>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/hero_architecture.png" alt="Viswa Groups Architectural Landmark">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <img src="assets/viswa_mark.png" alt="Viswa Mark">
+      <span>Enterprise Portfolio</span>
+    </div>
+
+    <h1 class="hero-title">Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span></h1>
+    <p class="hero-subtitle">Excellence across Real Estate, Commercial Development &amp; Luxury Hospitality</p>
+    <p class="hero-desc">Viswa Groups is a premier multi-disciplinary enterprise committed to architectural perfection, transparent governance, and sustainable investments that redefine urban landscapes.</p>
+
+    <div class="hero-actions">
+      <a href="#ventures" class="btn btn-primary">
+        Explore Our Ventures
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-secondary">Schedule Consultation</a>
+    </div>
+
+    <!-- Live Animated Metrics Counter Bar -->
+    <div class="metrics-bar">
+      <div class="metric-item">
+        <div class="metric-num"><span class="counter" data-target="25">25</span>+</div>
+        <div class="metric-label">Years of Legacy</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num"><span class="counter" data-target="10">10</span>M+</div>
+        <div class="metric-label">Sq. Ft. Delivered</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num"><span class="counter" data-target="15">15</span>+</div>
+        <div class="metric-label">Signature Ventures</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num"><span class="counter" data-target="99">99.4</span>%</div>
+        <div class="metric-label">Client Trust Score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CORPORATE LEGACY SECTION ===== -->
+<section class="section-padding legacy-section" id="legacy">
+  <div class="container">
+    <div class="grid-2col animate-on-scroll">
+      <div>
+        <span class="eyebrow">Our Governance &amp; Legacy</span>
+        <h2 class="heading-lg">Pioneering standard of excellence for over two decades</h2>
+        <p class="subheading" style="margin-bottom: 24px;">At Viswa Groups, every landmark project represents a promise of durability, financial security, and aesthetic value. We integrate forward-thinking design with timeless craftsmanship.</p>
+        
+        <div class="legacy-quote-card">
+          <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="legacy-quote-text">"Strong leadership is built on integrity, guided by vision, and ensured by the trust it earns."</p>
+          <div class="legacy-quote-author">
+            <img src="assets/chairman_photo.png" alt="J. Ragunandan" class="author-avatar">
+            <div class="author-info">
+              <h4>J. Ragunandan</h4>
+              <p>Chairman, Viswa Groups</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="pillar-title">Architectural Integrity</h3>
+          <p class="pillar-desc">Every structure is engineered with sustainable materials and timeless aesthetic frameworks.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="pillar-title">Engineering Precision</h3>
+          <p class="pillar-desc">Rigorous quality benchmarks and zero-compromise construction timelines across projects.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="pillar-title">Client-Centric Trust</h3>
+          <p class="pillar-desc">Transparent legal documentation, on-time delivery guarantees, and lifelong partnership.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3 class="pillar-title">Sustainable Value</h3>
+          <p class="pillar-desc">Strategic location acquisitions driving capital appreciation for owners and institutional partners.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VENTURES SHOWCASE SECTION ===== -->
+<section class="section-padding ventures-section" id="ventures">
+  <div class="container">
+    <div class="ventures-header animate-on-scroll">
+      <span class="eyebrow">Our Enterprise Portfolio</span>
+      <h2 class="heading-lg">Three Core Disciplines, One Unwavering Standard</h2>
+      <p class="subheading">Viswa Groups strategically operates across residential real estate, commercial infrastructure development, and luxury hospitality retreats.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="venture-tabs animate-on-scroll">
+      <button class="tab-btn active" onclick="filterVentures('all', this)">All Disciplines</button>
+      <button class="tab-btn" onclick="filterVentures('realestate', this)">Real Estate</button>
+      <button class="tab-btn" onclick="filterVentures('developers', this)">Developers</button>
+      <button class="tab-btn" onclick="filterVentures('hospitality', this)">Hospitality</button>
+    </div>
+
+    <!-- Grid of Venture Cards -->
+    <div class="ventures-grid animate-on-scroll">
+      
+      <!-- Card 1: Real Estate -->
+      <article class="venture-card" data-category="realestate">
+        <div class="venture-img-box">
+          <img src="assets/venture_realestate.png" alt="Viswa Real Estate Luxury Residences">
+          <span class="venture-tag">Real Estate</span>
+        </div>
+        <div class="venture-body">
+          <span class="venture-num">01 — RESIDENTIAL &amp; ESTATES</span>
+          <h3 class="venture-title">Viswa Real Estate</h3>
+          <p class="venture-desc">Creating premium residential gated communities, sky villas, and plotted developments tailored for modern executive living and generational investment security.</p>
+          <div class="venture-specs">
+            <div class="spec-item">
+              <span class="spec-label">Focus Area</span>
+              <span class="spec-val">Luxury Housing</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Delivered</span>
+              <span class="spec-val">5M+ Sq. Ft.</span>
+            </div>
+          </div>
+          <div class="venture-footer">
+            <button class="link-btn" onclick="openModal('Viswa Real Estate Brochure')">
+              Request Brochure
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Developers -->
+      <article class="venture-card" data-category="developers">
+        <div class="venture-img-box">
+          <img src="assets/venture_developers.png" alt="Viswa Commercial Developers">
+          <span class="venture-tag">Developers</span>
+        </div>
+        <div class="venture-body">
+          <span class="venture-num">02 — COMMERCIAL &amp; INFRASTRUCTURE</span>
+          <h3 class="venture-title">Viswa Developers</h3>
+          <p class="venture-desc">State-of-the-art commercial corporate towers, technology parks, and turnkey industrial spaces engineered for seamless operational efficiency.</p>
+          <div class="venture-specs">
+            <div class="spec-item">
+              <span class="spec-label">Focus Area</span>
+              <span class="spec-val">Grade-A Commercial</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Projects</span>
+              <span class="spec-val">12+ Completed</span>
+            </div>
+          </div>
+          <div class="venture-footer">
+            <button class="link-btn" onclick="openModal('Viswa Developers Partnership')">
+              Partner With Us
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Hospitality -->
+      <article class="venture-card" data-category="hospitality">
+        <div class="venture-img-box">
+          <img src="assets/venture_hospitality.png" alt="Viswa Hospitality Resort">
+          <span class="venture-tag">Hospitality</span>
+        </div>
+        <div class="venture-body">
+          <span class="venture-num">03 — FINE LIVING &amp; RETREATS</span>
+          <h3 class="venture-title">Viswa Hospitality</h3>
+          <p class="venture-desc">Boutique luxury resorts, executive wellness retreats, and curated dining experiences built on warm Indian hospitality and uncompromising luxury standard.</p>
+          <div class="venture-specs">
+            <div class="spec-item">
+              <span class="spec-label">Focus Area</span>
+              <span class="spec-val">5-Star Experiences</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Satisfaction</span>
+              <span class="spec-val">99.8% Guest Rating</span>
+            </div>
+          </div>
+          <div class="venture-footer">
+            <button class="link-btn" onclick="openModal('Viswa Hospitality Inquiry')">
+              Explore Properties
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXECUTIVE LEADERSHIP SECTION ===== -->
+<section class="section-padding leadership-section" id="leadership">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 60px;" class="animate-on-scroll">
+      <span class="eyebrow">Executive Governance</span>
+      <h2 class="heading-lg">Visionaries Shaping Our Horizon</h2>
+      <p class="subheading">Under principled stewardship, Viswa Groups has grown into a benchmark of stability, financial strength, and industry leadership.</p>
+    </div>
+
+    <div class="leadership-grid animate-on-scroll">
+      
+      <!-- Chairman Card -->
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="assets/chairman_photo.png" alt="J. Ragunandan, Chairman of Viswa Groups">
+        </div>
+        <div class="leader-content">
+          <span class="leader-role">Chairman &amp; Founder</span>
+          <h3 class="leader-name">J. Ragunandan</h3>
+          <p class="leader-quote">"Integrity is not a feature of our business — it is the cornerstone upon which every foundation is poured."</p>
+          <p class="leader-bio">With decades of strategic foresight, Mr. J. Ragunandan has directed the enterprise's expansion, establishing an indelible legacy of trust, ethical governance, and strategic asset creation across regions.</p>
+        </div>
+      </div>
+
+      <!-- Managing Director Card -->
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="assets/md_photo.png" alt="R. Jeyaviswadarsan, Managing Director of Viswa Groups">
+        </div>
+        <div class="leader-content">
+          <span class="leader-role">Managing Director</span>
+          <h3 class="leader-name">R. Jeyaviswadarsan</h3>
+          <p class="leader-quote">"We build for tomorrow by mastering technology, precision engineering, and customer satisfaction today."</p>
+          <p class="leader-bio">Pioneering modern operational methodologies and digital construction innovation, Mr. R. Jeyaviswadarsan drives Viswa Groups' diversified portfolio into its next era of high-growth expansion.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION & MISSION BAND ===== -->
+<section class="vision-band" id="vision">
+  <div class="vision-bg-glow"></div>
+  <div class="container vision-container animate-on-scroll">
+    <span class="eyebrow" style="color: var(--gold-light);">Corporate Creed</span>
+    <blockquote class="vision-statement">
+      "To build a trusted multi-disciplinary group of ventures founded on <em>integrity</em>, driven by <em>innovation</em>, and committed to <em>uncompromising quality</em> — creating lasting value for every investor, resident, and guest we serve."
+    </blockquote>
+    <a href="#contact" class="btn btn-primary">Connect With Corporate Team</a>
+  </div>
+</section>
+
+<!-- ===== EXECUTIVE CONTACT SECTION ===== -->
+<section class="section-padding contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid animate-on-scroll">
+      
+      <!-- Info Box -->
+      <div class="contact-info-card">
+        <span class="eyebrow">Corporate Headquarters</span>
+        <h3>Let's Build Something Meaningful Together</h3>
+        <p>Whether you are seeking luxury residential acquisition, commercial partnership, or hospitality management inquiry, our executive team is at your service.</p>
+
+        <div class="contact-methods">
+          <div class="contact-method-item">
+            <div class="contact-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Direct Telephone</span>
+              <a href="tel:+919761111999" class="contact-method-value">+91 97611 11999</a>
+            </div>
+          </div>
+
+          <div class="contact-method-item">
+            <div class="contact-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Official Correspondence</span>
+              <a href="mailto:contactus@viswagroups.com" class="contact-method-value">contactus@viswagroups.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method-item">
+            <div class="contact-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Social Media</span>
+              <a href="https://www.instagram.com/viswagroups/" target="_blank" rel="noopener" class="contact-method-value">@viswagroups</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Box -->
+      <div class="contact-form-card">
+        <h3 class="heading-md" style="margin-bottom: 8px;">Submit an Executive Inquiry</h3>
+        <p style="color: var(--text-muted); margin-bottom: 28px; font-size: 0.9375rem;">Please select your domain of interest. Our corporate relations team will respond within 24 hours.</p>
+
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Full Name *</label>
+            <input type="text" id="full-name" class="form-control" placeholder="e.g. Alexander Wright" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone-no">Contact Phone Number *</label>
+            <input type="tel" id="phone-no" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="domain-select">Domain of Interest *</label>
+            <select id="domain-select" class="form-control" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Real Estate">Real Estate Residential Acquisition</option>
+              <option value="Commercial Development">Commercial / Office Park Development</option>
+              <option value="Hospitality">Hospitality &amp; Resort Partnership</option>
+              <option value="Investor Relations">Institutional Investor Inquiry</option>
+              <option value="General">General Corporate Contact</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message Details</label>
+            <textarea id="message" class="form-control" placeholder="Share your inquiry or requirements..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Executive Message
+          </button>
+
+          <div class="form-toast" id="formToast">
+            Thank you. Your inquiry has been transmitted to Viswa Groups executive team.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL DIALOG ===== -->
+<div class="modal-backdrop" id="inquiryModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="eyebrow">Brochure &amp; Consultation Request</span>
+    <h3 class="heading-md" id="modalTitle" style="margin-bottom: 12px;">Request Portfolio Information</h3>
+    <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 24px;">Please enter your contact details below to receive executive brochures, floor plans, and investment datasheets.</p>
+
+    <form onsubmit="handleModalSubmit(event)">
+      <div class="form-group">
+        <label class="form-label" for="modal-name">Full Name *</label>
+        <input type="text" id="modal-name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="modal-email">Email Address *</label>
+        <input type="email" id="modal-email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="modal-phone">Phone Number *</label>
+        <input type="tel" id="modal-phone" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      
+      <div class="footer-brand">
+        <img src="assets/viswa_logo_full.png" alt="Viswa Groups">
+        <p>Building tomorrow, creating enduring value across Real Estate, Commercial Development, and Luxury Hospitality.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#legacy">Legacy</a></li>
+          <li><a href="#ventures">Ventures</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Disciplines</h4>
+        <ul class="footer-links">
+          <li><a href="#ventures">Real Estate</a></li>
+          <li><a href="#ventures">Developers</a></li>
+          <li><a href="#ventures">Hospitality</a></li>
+          <li><a href="#ventures">Asset Management</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Corporate Desk</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+919761111999">+91 97611 11999</a></li>
+          <li><a href="mailto:contactus@viswagroups.com">contactus@viswagroups.com</a></li>
+          <li><a href="https://www.instagram.com/viswagroups/" target="_blank" rel="noopener">Instagram Profile</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; <span id="currentYear"></span> Viswa Groups. All rights reserved.</div>
+      <div>Real Estate &nbsp;•&nbsp; Developers &nbsp;•&nbsp; Hospitality</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Set current copyright year
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  // Sticky Header Scroll Effect
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile Navigation Drawer Toggle
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    mobileDrawer.classList.add('active');
+  });
+  document.getElementById('mobileDrawerClose').addEventListener('click', () => {
+    mobileDrawer.classList.remove('active');
+  });
+  function closeMobileNav() {
+    mobileDrawer.classList.remove('active');
+  }
+
+  // Venture Filter Functionality
+  function filterVentures(category, btnEl) {
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    btnEl.classList.add('active');
+
+    const cards = document.querySelectorAll('.venture-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Modal Dialog Actions
+  const modalBackdrop = document.getElementById('inquiryModal');
+  const modalTitle = document.getElementById('modalTitle');
+
+  function openModal(title) {
+    if (title) modalTitle.textContent = title;
+    modalBackdrop.classList.add('active');
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove('active');
+  }
+
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+
+  // Contact Form Submission Handling
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const toast = document.getElementById('formToast');
+    toast.classList.add('success');
+    document.getElementById('contactForm').reset();
+    setTimeout(() => {
+      toast.classList.remove('success');
+    }, 5000);
+  }
+
+  function handleModalSubmit(e) {
+    e.preventDefault();
+    alert('Thank you! Your request has been logged. Our corporate manager will connect shortly.');
+    closeModal();
+  }
+
+  // Scroll Animations Observer & Counter Animation
+  const observerOptions = {
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        
+        // Trigger counter animation if inside metrics
+        if (entry.target.querySelector('.counter')) {
+          animateCounters();
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll, .metrics-bar').forEach(el => {
+    observer.observe(el);
+  });
+
+  function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const target = parseFloat(counter.getAttribute('data-target'));
+      let count = 0;
+      const speed = target / 30;
+      
+      const updateCount = () => {
+        count += speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count);
+          setTimeout(updateCount, 40);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  }
+</script>
+
+</body>
+</html>

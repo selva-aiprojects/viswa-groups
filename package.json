@@ -1,0 +1,18 @@
+{
+  "name": "viswa-groups-website",
+  "version": "1.0.0",
+  "description": "Viswa Groups - Formal & Professional Enterprise Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [
+    "viswa-groups",
+    "real-estate",
+    "developers",
+    "hospitality"
+  ],
+  "author": "Viswa Groups",
+  "license": "ISC"
+}
