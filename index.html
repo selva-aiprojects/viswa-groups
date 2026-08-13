@@ -799,9 +799,15 @@
   .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 760px;
+    max-width: 100%;
+    width: 100%;
     padding-bottom: 60px;
     padding-top: 200px;
+  }
+
+  /* Constrain text/CTAs but let ribbon span full width */
+  .hero-text-wrap {
+    max-width: 760px;
   }
 
   .hero-badge {
@@ -2145,6 +2151,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+    overflow: hidden;
   }
 
   .hero-slide-item {
@@ -2476,6 +2483,20 @@
     }
   }
 
+  /* ===== ROLLING RIBBON SECTION (below hero) ===== */
+  .rolling-ribbon-section {
+    position: relative;
+    z-index: 10;
+    background: var(--bg-dark);
+    padding: 0 0 32px;
+    margin-top: -2px; /* seamless connection to hero */
+  }
+
+  .rolling-ribbon-section .rolling-projects-wrapper {
+    margin-top: 0;
+    border-radius: var(--radius-lg);
+  }
+
   /* Land Portfolio & Layout Sites Styles */
   .land-portfolio-section {
     background-color: var(--bg-card);
@@ -2772,138 +2793,43 @@
   <div class="hero-overlay"></div>
 
   <div class="container hero-content">
-    <div class="hero-badge">
-      <img src="assets/viswa_mark.png" alt="Viswa Emblem Mark" style="height: 22px; width: auto;">
-      <span id="heroSlideTag">Corporate Architecture &amp; Landmarks</span>
-    </div>
-
-    <h1 class="hero-title" id="heroSlideTitle">Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span></h1>
-    <p class="hero-subtitle" id="heroSlideSubtitle">Excellence across Real Estate, Strategic Land Banks &amp; Luxury Hospitality</p>
-
-    <div class="hero-actions">
-      <a href="#land-portfolio" class="btn btn-primary">
-        Explore Land Holdings
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="#ventures" class="btn btn-secondary">Flagship Ventures</a>
-    </div>
-
-    <!-- Live Animated Metrics Counter Bar -->
-    <div class="metrics-bar">
-      <div class="metric-item">
-        <div class="metric-num"><span class="counter" data-target="25">25</span>+</div>
-        <div class="metric-label">Years of Legacy</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-num"><span class="counter" data-target="10">10</span>M+</div>
-        <div class="metric-label">Sq. Ft. Delivered</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-num"><span class="counter" data-target="15">15</span>+</div>
-        <div class="metric-label">Signature Ventures</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-num"><span class="counter" data-target="99">99.4</span>%</div>
-        <div class="metric-label">Client Trust Score</div>
-      </div>
-    </div>
-
-    <!-- Casagrand-Style Rolling Projects Ribbon Showcase -->
-    <div class="rolling-projects-wrapper">
-      <div class="rolling-progress-container">
-        <div class="rolling-progress-bar" id="rollingProgressBar"></div>
-      </div>
-      
-      <div class="rolling-projects-header">
-        <div class="rolling-projects-title">
-          <span class="pulse-dot"></span>
-          <span>FLAGSHIP PORTFOLIO SHOWCASE</span>
-        </div>
-        <div class="rolling-nav-arrows">
-          <button onclick="heroSlidePrev()" aria-label="Previous Project" class="rolling-arrow-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <span class="rolling-counter" id="rollingCounter">01 / 06</span>
-          <button onclick="heroSlideNext()" aria-label="Next Project" class="rolling-arrow-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
+    <div class="hero-text-wrap">
+      <div class="hero-badge">
+        <img src="assets/viswa_mark.png" alt="Viswa Emblem Mark" style="height: 22px; width: auto;">
+        <span id="heroSlideTag">Corporate Architecture &amp; Landmarks</span>
       </div>
 
-      <div class="rolling-projects-track" id="rollingProjectsTrack">
-        <!-- Card 0 -->
-        <div class="rolling-project-card active" data-slide-target="0" onclick="goToHeroSlide(0)">
-          <div class="card-thumb">
-            <img src="assets/hero_architecture.png" alt="Viswa Corporate HQ">
-            <span class="card-badge">LANDMARK</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Viswa Corporate HQ</h4>
-            <p class="card-location">Mount Road CBD, Chennai</p>
-          </div>
-        </div>
+      <h1 class="hero-title" id="heroSlideTitle">Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span></h1>
+      <p class="hero-subtitle" id="heroSlideSubtitle">Excellence across Real Estate, Strategic Land Banks &amp; Luxury Hospitality</p>
 
-        <!-- Card 1 -->
-        <div class="rolling-project-card" data-slide-target="1" onclick="goToHeroSlide(1)">
-          <div class="card-thumb">
-            <img src="assets/hero_land_deals_1.png" alt="Viswa Grand Horizon">
-            <span class="card-badge">PLOTTED TOWNSHIP</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Grand Horizon Township</h4>
-            <p class="card-location">ECR Coastal Expressway</p>
-          </div>
-        </div>
+      <div class="hero-actions">
+        <a href="#land-portfolio" class="btn btn-primary">
+          Explore Land Holdings
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#ventures" class="btn btn-secondary">Flagship Ventures</a>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="rolling-project-card" data-slide-target="2" onclick="goToHeroSlide(2)">
-          <div class="card-thumb">
-            <img src="assets/hero_land_deals_2.png" alt="Viswa Express Land Hub">
-            <span class="card-badge">COMMERCIAL LAND</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Express Commercial Land</h4>
-            <p class="card-location">GST Highway Logistics Hub</p>
-          </div>
+      <!-- Live Animated Metrics Counter Bar -->
+      <div class="metrics-bar">
+        <div class="metric-item">
+          <div class="metric-num"><span class="counter" data-target="25">25</span>+</div>
+          <div class="metric-label">Years of Legacy</div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="rolling-project-card" data-slide-target="3" onclick="goToHeroSlide(3)">
-          <div class="card-thumb">
-            <img src="assets/venture_realestate.png" alt="Viswa Royal Palm">
-            <span class="card-badge">GATED COMMUNITY</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Royal Palm Sanctuary</h4>
-            <p class="card-location">Coimbatore Ring Road</p>
-          </div>
+        <div class="metric-item">
+          <div class="metric-num"><span class="counter" data-target="10">10</span>M+</div>
+          <div class="metric-label">Sq. Ft. Delivered</div>
         </div>
-
-        <!-- Card 4 -->
-        <div class="rolling-project-card" data-slide-target="4" onclick="goToHeroSlide(4)">
-          <div class="card-thumb">
-            <img src="assets/venture_developers.png" alt="Viswa Commercial High-Rise">
-            <span class="card-badge">HIGH-RISE TOWER</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Viswa Tech Pinnacle</h4>
-            <p class="card-location">OMR IT Expressway</p>
-          </div>
+        <div class="metric-item">
+          <div class="metric-num"><span class="counter" data-target="15">15</span>+</div>
+          <div class="metric-label">Signature Ventures</div>
         </div>
-
-        <!-- Card 5 -->
-        <div class="rolling-project-card" data-slide-target="5" onclick="goToHeroSlide(5)">
-          <div class="card-thumb">
-            <img src="assets/venture_hospitality.png" alt="Viswa Whispering Pines">
-            <span class="card-badge">LUXURY RESORT</span>
-          </div>
-          <div class="card-info">
-            <h4 class="card-name">Whispering Pines Estate</h4>
-            <p class="card-location">Kodaikanal Foothills</p>
-          </div>
+        <div class="metric-item">
+          <div class="metric-num"><span class="counter" data-target="99">99.4</span>%</div>
+          <div class="metric-label">Client Trust Score</div>
         </div>
       </div>
-    </div>
+    </div><!-- end hero-text-wrap -->
   </div>
 
   <!-- Hero Slider Glassmorphic Controls -->
@@ -2927,6 +2853,60 @@
     
     <div class="hero-slide-counter">
       <span id="currentSlideNum">01</span> / <span>06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROLLING PROJECTS RIBBON (standalone — outside hero) ===== -->
+<section class="rolling-ribbon-section">
+  <div class="container">
+    <div class="rolling-projects-wrapper">
+      <div class="rolling-progress-container">
+        <div class="rolling-progress-bar" id="rollingProgressBar"></div>
+      </div>
+      
+      <div class="rolling-projects-header">
+        <div class="rolling-projects-title">
+          <span class="pulse-dot"></span>
+          <span>FLAGSHIP PORTFOLIO SHOWCASE</span>
+        </div>
+        <div class="rolling-nav-arrows">
+          <button onclick="heroSlidePrev()" aria-label="Previous Project" class="rolling-arrow-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span class="rolling-counter" id="rollingCounter">01 / 06</span>
+          <button onclick="heroSlideNext()" aria-label="Next Project" class="rolling-arrow-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="rolling-projects-track" id="rollingProjectsTrack">
+        <div class="rolling-project-card active" data-slide-target="0" onclick="goToHeroSlide(0)">
+          <div class="card-thumb"><img src="assets/hero_architecture.png" alt="Viswa Corporate HQ"><span class="card-badge">LANDMARK</span></div>
+          <div class="card-info"><h4 class="card-name">Viswa Corporate HQ</h4><p class="card-location">Mount Road CBD, Chennai</p></div>
+        </div>
+        <div class="rolling-project-card" data-slide-target="1" onclick="goToHeroSlide(1)">
+          <div class="card-thumb"><img src="assets/hero_land_deals_1.png" alt="Grand Horizon"><span class="card-badge">PLOTTED TOWNSHIP</span></div>
+          <div class="card-info"><h4 class="card-name">Grand Horizon Township</h4><p class="card-location">ECR Coastal Expressway</p></div>
+        </div>
+        <div class="rolling-project-card" data-slide-target="2" onclick="goToHeroSlide(2)">
+          <div class="card-thumb"><img src="assets/hero_land_deals_2.png" alt="Express Land"><span class="card-badge">COMMERCIAL LAND</span></div>
+          <div class="card-info"><h4 class="card-name">Express Commercial Land</h4><p class="card-location">GST Highway Logistics Hub</p></div>
+        </div>
+        <div class="rolling-project-card" data-slide-target="3" onclick="goToHeroSlide(3)">
+          <div class="card-thumb"><img src="assets/venture_realestate.png" alt="Royal Palm"><span class="card-badge">GATED COMMUNITY</span></div>
+          <div class="card-info"><h4 class="card-name">Royal Palm Sanctuary</h4><p class="card-location">Coimbatore Ring Road</p></div>
+        </div>
+        <div class="rolling-project-card" data-slide-target="4" onclick="goToHeroSlide(4)">
+          <div class="card-thumb"><img src="assets/venture_developers.png" alt="Tech Pinnacle"><span class="card-badge">HIGH-RISE TOWER</span></div>
+          <div class="card-info"><h4 class="card-name">Viswa Tech Pinnacle</h4><p class="card-location">OMR IT Expressway</p></div>
+        </div>
+        <div class="rolling-project-card" data-slide-target="5" onclick="goToHeroSlide(5)">
+          <div class="card-thumb"><img src="assets/venture_hospitality.png" alt="Whispering Pines"><span class="card-badge">LUXURY RESORT</span></div>
+          <div class="card-info"><h4 class="card-name">Whispering Pines Estate</h4><p class="card-location">Kodaikanal Foothills</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
