@@ -3636,7 +3636,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let currentHeroSlideIndex = 0;
   let heroSlideInterval = null;
-  const SLIDE_DURATION = 6000;
+  const SLIDE_DURATION = 5000;
 
   function animateProgressBar() {
     const bar = document.getElementById('rollingProgressBar');
@@ -3663,7 +3663,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dots.forEach((d, i)   => d.classList.toggle('active', i === index));
     cards.forEach((c, i)  => c.classList.toggle('active', i === index));
 
-    // Scroll ribbon to center the active card
+    // Scroll ribbon track to center the active card
     const activeCard = document.querySelector(`.rolling-project-card[data-slide-target="${index}"]`);
     const track = document.getElementById('rollingProjectsTrack');
     if (activeCard && track) {
@@ -3684,42 +3684,40 @@ document.addEventListener('DOMContentLoaded', function() {
     animateProgressBar();
   }
 
-  window.goToHeroSlide = function(index) { updateHeroSlide(index); resetHeroTimer(); };
-  window.heroSlideNext = function() { updateHeroSlide((currentHeroSlideIndex + 1) % heroSlideData.length); resetHeroTimer(); };
-  window.heroSlidePrev = function() { updateHeroSlide((currentHeroSlideIndex - 1 + heroSlideData.length) % heroSlideData.length); resetHeroTimer(); };
+  function nextHeroSlide() {
+    const nextIndex = (currentHeroSlideIndex + 1) % heroSlideData.length;
+    updateHeroSlide(nextIndex);
+  }
+
+  function prevHeroSlide() {
+    const prevIndex = (currentHeroSlideIndex - 1 + heroSlideData.length) % heroSlideData.length;
+    updateHeroSlide(prevIndex);
+  }
 
   function startHeroTimer() {
-    animateProgressBar();
-    heroSlideInterval = setInterval(window.heroSlideNext, SLIDE_DURATION);
+    if (heroSlideInterval) clearInterval(heroSlideInterval);
+    heroSlideInterval = setInterval(nextHeroSlide, SLIDE_DURATION);
   }
 
   function resetHeroTimer() {
-    clearInterval(heroSlideInterval);
     startHeroTimer();
   }
 
-  // Start on load
+  window.goToHeroSlide = function(index) { updateHeroSlide(index); resetHeroTimer(); };
+  window.heroSlideNext = function() { nextHeroSlide(); resetHeroTimer(); };
+  window.heroSlidePrev = function() { prevHeroSlide(); resetHeroTimer(); };
+
+  // Initialize 1st slide immediately and start continuous auto-rolling slider
   updateHeroSlide(0);
   startHeroTimer();
 
-  // Pause on hover (both hero and ribbon)
-  [document.getElementById('heroSection'), document.querySelector('.rolling-ribbon-section')].forEach(el => {
-    if (!el) return;
-    el.addEventListener('mouseenter', () => {
-      clearInterval(heroSlideInterval);
-      const bar = document.getElementById('rollingProgressBar');
-      if (bar) { bar.style.transition = 'none'; bar.style.width = getComputedStyle(bar).width; }
-    });
-    el.addEventListener('mouseleave', resetHeroTimer);
-  });
-
-  // Keyboard
+  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft')  window.heroSlidePrev();
     if (e.key === 'ArrowRight') window.heroSlideNext();
   });
 
-  // Touch swipe
+  // Touch swipe support
   let tx = 0;
   const heroEl = document.getElementById('heroSection');
   if (heroEl) {
