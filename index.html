@@ -654,21 +654,21 @@
 
   .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.12;
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
   }
 
   .hero-subtitle {
     font-family: var(--font-serif);
-    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-size: clamp(0.95rem, 1.25vw, 1.15rem);
     font-style: italic;
     color: var(--text-main);
     opacity: 0.9;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     font-weight: 400;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   }
@@ -1567,9 +1567,17 @@
       display: flex;
       flex-shrink: 0;
     }
+    .hero-content {
+      padding-top: 160px;
+      padding-bottom: 50px;
+    }
+    .hero-text-wrap {
+      max-width: 100%;
+    }
     .metrics-bar {
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 20px;
+      margin-top: 36px;
     }
     .contact-grid {
       grid-template-columns: 1fr;
@@ -1591,15 +1599,46 @@
       object-position: center top;
     }
     .footer-top {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
     }
   }
 
   @media (max-width: 768px) {
+    .site-header {
+      padding: 14px 0;
+    }
+    .site-header.scrolled {
+      padding: 10px 0;
+    }
     .header-actions .btn-primary {
       display: none;
     }
-
+    .hero-content {
+      padding-top: 130px;
+      padding-bottom: 40px;
+    }
+    .hero-actions {
+      gap: 12px;
+    }
+    .land-filter-bar {
+      justify-content: flex-start;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .land-filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .land-tab-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      padding: 8px 16px;
+    }
     .leader-photo {
       height: 300px;
       min-height: 250px;
@@ -1613,16 +1652,96 @@
     }
     .footer-top {
       grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .modal-box {
+      padding: 32px 24px;
+      width: 92%;
     }
   }
 
   @media (max-width: 480px) {
+    .container {
+      padding: 0 16px;
+    }
+    .section-padding {
+      padding: 52px 0;
+    }
+    .brand-logo img {
+      height: 36px;
+    }
+    .brand-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+    }
+    .hero-content {
+      padding-top: 110px;
+      padding-bottom: 30px;
+    }
+    .hero-badge {
+      padding: 6px 14px;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .hero-badge span {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+    .hero-badge img {
+      height: 18px;
+    }
+    .hero-actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+      font-size: 0.8125rem;
+    }
+    .metrics-bar {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 16px;
+      margin-top: 24px;
+      padding-top: 16px;
+    }
+    .metric-num {
+      font-size: 1.45rem;
+    }
+    .metric-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+    }
+    .venture-showcase-img {
+      height: 240px;
+    }
+    .venture-showcase-content {
+      padding: 24px 18px;
+    }
+    .land-card-header {
+      height: 210px;
+    }
     .leader-photo {
-      height: 300px;
-      min-height: 260px;
+      height: 280px;
+      min-height: 220px;
     }
     .leader-content {
-      padding: 22px 18px;
+      padding: 20px 16px;
+    }
+    .modal-box {
+      padding: 24px 18px;
+      width: 95%;
+      max-height: 85vh;
+      border-radius: 12px;
+    }
+    .modal-close {
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      font-size: 1.25rem;
     }
     .mobile-drawer {
       padding: 75px 20px 30px;
@@ -2018,10 +2137,22 @@
 
   @media (max-width: 768px) {
     .hero-slider-controls {
-      right: 20px;
-      bottom: 24px;
-      padding: 8px 14px;
-      gap: 10px;
+      top: 92px;
+      right: 16px;
+      bottom: auto;
+      padding: 6px 12px;
+      gap: 8px;
+    }
+    .hero-slider-btn {
+      width: 30px;
+      height: 30px;
+    }
+    .hero-dot {
+      width: 16px;
+      height: 3px;
+    }
+    .hero-dot.active {
+      width: 30px;
     }
   }
 
