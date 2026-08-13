@@ -71,189 +71,6 @@
     }
   ]
 }
-
-  // ===== HERO CINEMATIC & CASAGRAND-STYLE ROLLING SLIDER SCRIPT =====
-  const heroSlideData = [
-    {
-      tag: 'Corporate Architecture & Landmarks',
-      title: 'Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span>',
-      subtitle: 'Excellence across Real Estate, Commercial Landmarks & Luxury Hospitality'
-    },
-    {
-      tag: 'Master-Planned Plotted Layouts',
-      title: 'Flagship Plotted Townships.<br><span class="text-gold">Ready For Infrastructure.</span>',
-      subtitle: '100% DTCP & RERA approved layout developments with 60ft blacktop avenues'
-    },
-    {
-      tag: 'Strategic Enterprise Land Banks',
-      title: 'High-Yield Land Acquisitions.<br><span class="text-gold">Highway Express Corridors.</span>',
-      subtitle: 'Prime commercial and industrial land parcels engineered for enterprise expansion'
-    },
-    {
-      tag: 'Integrated Gated Communities',
-      title: 'Strategic Land Holdings.<br><span class="text-gold">Engineered For Generations.</span>',
-      subtitle: 'Subterranean electrical utilities, water treatment, and green open sanctuaries'
-    },
-    {
-      tag: 'Urban High-Rises & Developers',
-      title: 'Iconic Engineering Marvels.<br><span class="text-gold">Uncompromising Precision.</span>',
-      subtitle: 'Pioneering structural engineering, commercial towers, and smart communities'
-    },
-    {
-      tag: 'Luxury Hospitality & Retreats',
-      title: 'Curated Fine Living.<br><span class="text-gold">Warm Indian Hospitality.</span>',
-      subtitle: 'Boutique wellness resorts, executive retreats, and signature dining'
-    }
-  ];
-
-  let currentHeroSlideIndex = 0;
-  let heroSlideInterval = null;
-  const SLIDE_DURATION = 6000; // 6 seconds auto play
-
-  function animateProgressBar() {
-    const bar = document.getElementById('rollingProgressBar');
-    if (!bar) return;
-    bar.style.transition = 'none';
-    bar.style.width = '0%';
-    void bar.offsetWidth; // Force reflow
-    bar.style.transition = `width ${SLIDE_DURATION}ms linear`;
-    bar.style.width = '100%';
-  }
-
-  function updateHeroSlide(index) {
-    currentHeroSlideIndex = index;
-    const slides = document.querySelectorAll('.hero-slide-item');
-    const dots = document.querySelectorAll('.hero-dot');
-    const cards = document.querySelectorAll('.rolling-project-card');
-    const counterEl = document.getElementById('currentSlideNum');
-    const rollingCounter = document.getElementById('rollingCounter');
-    const tagEl = document.getElementById('heroSlideTag');
-    const titleEl = document.getElementById('heroSlideTitle');
-    const subtitleEl = document.getElementById('heroSlideSubtitle');
-
-    slides.forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === index);
-    });
-
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === index);
-    });
-
-    cards.forEach((card, idx) => {
-      card.classList.toggle('active', idx === index);
-    });
-
-    // Auto scroll rolling projects track to center active card
-    const activeCard = document.querySelector(`.rolling-project-card[data-slide-target="${index}"]`);
-    const track = document.getElementById('rollingProjectsTrack');
-    if (activeCard && track) {
-      const cardOffset = activeCard.offsetLeft - track.offsetLeft;
-      const cardWidth = activeCard.offsetWidth;
-      const trackWidth = track.offsetWidth;
-      track.scrollTo({
-        left: cardOffset - (trackWidth / 2) + (cardWidth / 2),
-        behavior: 'smooth'
-      });
-    }
-
-    const formattedNum = String(index + 1).padStart(2, '0');
-    if (counterEl) counterEl.textContent = formattedNum;
-    if (rollingCounter) rollingCounter.textContent = `${formattedNum} / ${String(heroSlideData.length).padStart(2, '0')}`;
-
-    if (tagEl && heroSlideData[index]) tagEl.textContent = heroSlideData[index].tag;
-    if (titleEl && heroSlideData[index]) titleEl.innerHTML = heroSlideData[index].title;
-    if (subtitleEl && heroSlideData[index]) subtitleEl.textContent = heroSlideData[index].subtitle;
-
-    animateProgressBar();
-  }
-
-  function goToHeroSlide(index) {
-    updateHeroSlide(index);
-    resetHeroTimer();
-  }
-
-  function heroSlideNext() {
-    const nextIndex = (currentHeroSlideIndex + 1) % heroSlideData.length;
-    updateHeroSlide(nextIndex);
-    resetHeroTimer();
-  }
-
-  function heroSlidePrev() {
-    const prevIndex = (currentHeroSlideIndex - 1 + heroSlideData.length) % heroSlideData.length;
-    updateHeroSlide(prevIndex);
-    resetHeroTimer();
-  }
-
-  function startHeroTimer() {
-    animateProgressBar();
-    heroSlideInterval = setInterval(() => {
-      heroSlideNext();
-    }, SLIDE_DURATION);
-  }
-
-  function resetHeroTimer() {
-    if (heroSlideInterval) clearInterval(heroSlideInterval);
-    startHeroTimer();
-  }
-
-  startHeroTimer();
-
-  // Pause hero slider on mouse hover
-  const heroSection = document.getElementById('heroSection');
-  if (heroSection) {
-    heroSection.addEventListener('mouseenter', () => { 
-      if (heroSlideInterval) clearInterval(heroSlideInterval);
-      const bar = document.getElementById('rollingProgressBar');
-      if (bar) {
-        const computedWidth = getComputedStyle(bar).width;
-        bar.style.transition = 'none';
-        bar.style.width = computedWidth;
-      }
-    });
-    heroSection.addEventListener('mouseleave', () => { resetHeroTimer(); });
-  }
-
-  // Keyboard navigation for hero slider
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') heroSlidePrev();
-    if (e.key === 'ArrowRight') heroSlideNext();
-  });
-
-  // Touch Swipe navigation support for mobile & tablet
-  let touchStartX = 0;
-  let touchEndX = 0;
-  if (heroSection) {
-    heroSection.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    heroSection.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 40) heroSlideNext();
-      if (touchEndX - touchStartX > 40) heroSlidePrev();
-    }, { passive: true });
-  }
-
-  // ===== LAND PORTFOLIO FILTER SCRIPT =====
-  function filterLand(category, btnEl) {
-    const buttons = document.querySelectorAll('.land-tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    btnEl.classList.add('active');
-
-    const cards = document.querySelectorAll('.land-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
-  // Layout Masterplan Modal Action
-  function openLayoutModal(projectName) {
-    openModal('Masterplan Layout & Specs: ' + projectName);
-  }
-
 </script>
 
 <!-- Google Fonts -->
@@ -3647,4 +3464,155 @@
 </div>
 
 </body>
+
+<!-- ===== HERO CINEMATIC SLIDER & ROLLING RIBBON JS ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  const heroSlideData = [
+    {
+      tag: 'Corporate Architecture & Landmarks',
+      title: 'Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span>',
+      subtitle: 'Excellence across Real Estate, Commercial Landmarks & Luxury Hospitality'
+    },
+    {
+      tag: 'Master-Planned Plotted Layouts',
+      title: 'Flagship Plotted Townships.<br><span class="text-gold">Ready For Infrastructure.</span>',
+      subtitle: '100% DTCP & RERA approved layout developments with 60ft blacktop avenues'
+    },
+    {
+      tag: 'Strategic Enterprise Land Banks',
+      title: 'High-Yield Land Acquisitions.<br><span class="text-gold">Highway Express Corridors.</span>',
+      subtitle: 'Prime commercial and industrial land parcels engineered for enterprise expansion'
+    },
+    {
+      tag: 'Integrated Gated Communities',
+      title: 'Strategic Land Holdings.<br><span class="text-gold">Engineered For Generations.</span>',
+      subtitle: 'Subterranean electrical utilities, water treatment, and green open sanctuaries'
+    },
+    {
+      tag: 'Urban High-Rises & Developers',
+      title: 'Iconic Engineering Marvels.<br><span class="text-gold">Uncompromising Precision.</span>',
+      subtitle: 'Pioneering structural engineering, commercial towers, and smart communities'
+    },
+    {
+      tag: 'Luxury Hospitality & Retreats',
+      title: 'Curated Fine Living.<br><span class="text-gold">Warm Indian Hospitality.</span>',
+      subtitle: 'Boutique wellness resorts, executive retreats, and signature dining'
+    }
+  ];
+
+  let currentHeroSlideIndex = 0;
+  let heroSlideInterval = null;
+  const SLIDE_DURATION = 6000;
+
+  function animateProgressBar() {
+    const bar = document.getElementById('rollingProgressBar');
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    void bar.offsetWidth;
+    bar.style.transition = `width ${SLIDE_DURATION}ms linear`;
+    bar.style.width = '100%';
+  }
+
+  function updateHeroSlide(index) {
+    currentHeroSlideIndex = index;
+    const slides = document.querySelectorAll('.hero-slide-item');
+    const dots   = document.querySelectorAll('.hero-dot');
+    const cards  = document.querySelectorAll('.rolling-project-card');
+    const counterEl      = document.getElementById('currentSlideNum');
+    const rollingCounter = document.getElementById('rollingCounter');
+    const tagEl          = document.getElementById('heroSlideTag');
+    const titleEl        = document.getElementById('heroSlideTitle');
+    const subtitleEl     = document.getElementById('heroSlideSubtitle');
+
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    dots.forEach((d, i)   => d.classList.toggle('active', i === index));
+    cards.forEach((c, i)  => c.classList.toggle('active', i === index));
+
+    // Scroll ribbon to center the active card
+    const activeCard = document.querySelector(`.rolling-project-card[data-slide-target="${index}"]`);
+    const track = document.getElementById('rollingProjectsTrack');
+    if (activeCard && track) {
+      track.scrollTo({
+        left: activeCard.offsetLeft - track.offsetLeft - (track.offsetWidth / 2) + (activeCard.offsetWidth / 2),
+        behavior: 'smooth'
+      });
+    }
+
+    const num = String(index + 1).padStart(2, '0');
+    const total = String(heroSlideData.length).padStart(2, '0');
+    if (counterEl)      counterEl.textContent = num;
+    if (rollingCounter) rollingCounter.textContent = `${num} / ${total}`;
+    if (tagEl && heroSlideData[index])      tagEl.textContent  = heroSlideData[index].tag;
+    if (titleEl && heroSlideData[index])    titleEl.innerHTML   = heroSlideData[index].title;
+    if (subtitleEl && heroSlideData[index]) subtitleEl.textContent = heroSlideData[index].subtitle;
+
+    animateProgressBar();
+  }
+
+  window.goToHeroSlide = function(index) { updateHeroSlide(index); resetHeroTimer(); };
+  window.heroSlideNext = function() { updateHeroSlide((currentHeroSlideIndex + 1) % heroSlideData.length); resetHeroTimer(); };
+  window.heroSlidePrev = function() { updateHeroSlide((currentHeroSlideIndex - 1 + heroSlideData.length) % heroSlideData.length); resetHeroTimer(); };
+
+  function startHeroTimer() {
+    animateProgressBar();
+    heroSlideInterval = setInterval(window.heroSlideNext, SLIDE_DURATION);
+  }
+
+  function resetHeroTimer() {
+    clearInterval(heroSlideInterval);
+    startHeroTimer();
+  }
+
+  // Start on load
+  updateHeroSlide(0);
+  startHeroTimer();
+
+  // Pause on hover (both hero and ribbon)
+  [document.getElementById('heroSection'), document.querySelector('.rolling-ribbon-section')].forEach(el => {
+    if (!el) return;
+    el.addEventListener('mouseenter', () => {
+      clearInterval(heroSlideInterval);
+      const bar = document.getElementById('rollingProgressBar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = getComputedStyle(bar).width; }
+    });
+    el.addEventListener('mouseleave', resetHeroTimer);
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  window.heroSlidePrev();
+    if (e.key === 'ArrowRight') window.heroSlideNext();
+  });
+
+  // Touch swipe
+  let tx = 0;
+  const heroEl = document.getElementById('heroSection');
+  if (heroEl) {
+    heroEl.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+    heroEl.addEventListener('touchend',   e => {
+      const diff = tx - e.changedTouches[0].screenX;
+      if (diff > 40)  window.heroSlideNext();
+      if (diff < -40) window.heroSlidePrev();
+    }, { passive: true });
+  }
+
+  // ===== LAND PORTFOLIO FILTER =====
+  window.filterLand = function(category, btnEl) {
+    document.querySelectorAll('.land-tab-btn').forEach(b => b.classList.remove('active'));
+    btnEl.classList.add('active');
+    document.querySelectorAll('.land-card').forEach(card => {
+      card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? 'flex' : 'none';
+    });
+  };
+
+  window.openLayoutModal = function(projectName) {
+    if (typeof openModal === 'function') openModal('Masterplan Layout & Specs: ' + projectName);
+  };
+
+});
+</script>
+
 </html>
