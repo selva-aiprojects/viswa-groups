@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://viswagroups.com/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/hero_architecture.png</image:loc>
+      <image:title>Viswa Groups Architectural Landmark</image:title>
+      <image:caption>Viswa Groups corporate headquarters and prime CBD commercial land parcel.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/hero_land_deals_1.png</image:loc>
+      <image:title>Grand Horizon Plotted Township</image:title>
+      <image:caption>Viswa master-planned plotted layout township.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/hero_land_deals_2.png</image:loc>
+      <image:title>Express Commercial Land Hub</image:title>
+      <image:caption>Viswa strategic highway commercial land bank.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/venture_realestate.png</image:loc>
+      <image:title>Viswa Real Estate Luxury Residences</image:title>
+      <image:caption>Royal Palm — Viswa integrated gated community.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/venture_developers.png</image:loc>
+      <image:title>Viswa Commercial Developers</image:title>
+      <image:caption>Tech Pinnacle — Viswa commercial and high-rise infrastructure.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/venture_hospitality.png</image:loc>
+      <image:title>Viswa Luxury Hospitality Resort</image:title>
+      <image:caption>Whispering Pines — Viswa luxury hospitality and resort estates.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/chairman_photo.png</image:loc>
+      <image:title>J. Ragunandan — Chairman of Viswa Groups</image:title>
+      <image:caption>J. Ragunandan, Chairman of Viswa Groups.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/md_photo.png</image:loc>
+      <image:title>R. Jeyaviswadarsan — Managing Director of Viswa Groups</image:title>
+      <image:caption>R. Jeyaviswadarsan, Managing Director of Viswa Groups.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://viswagroups.com/assets/viswa_logo_full.png</image:loc>
+      <image:title>Viswa Groups Logo</image:title>
+      <image:caption>Viswa Groups corporate logo.</image:caption>
+    </image:image>
   </url>
 </urlset>
