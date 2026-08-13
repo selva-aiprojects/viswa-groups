@@ -1100,7 +1100,7 @@
     box-shadow: var(--shadow-md);
     border: 1px solid var(--bg-card-border);
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 230px 1fr;
     transition: var(--transition);
   }
 
@@ -1131,7 +1131,7 @@
 
   /* Tight head-and-shoulders portraits; center-top framing keeps faces fully visible at all sizes */
   .leader-content {
-    padding: 32px 28px;
+    padding: 28px 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1150,10 +1150,11 @@
 
   .leader-name {
     font-family: var(--font-heading);
-    font-size: 1.625rem;
+    font-size: clamp(1.2rem, 1.4vw, 1.5rem);
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     color: var(--text-main);
+    white-space: nowrap;
   }
 
   .leader-quote {
@@ -3061,7 +3062,7 @@
         </div>
         <div class="leader-content">
           <span class="leader-role">Chairman &amp; Founder</span>
-          <h3 class="leader-name">J. Ragunandan</h3>
+          <h3 class="leader-name">J.&nbsp;Ragunandan</h3>
           <p class="leader-quote">"Integrity is not a feature of our business — it is the cornerstone upon which every foundation is poured."</p>
           <p class="leader-bio">With decades of strategic foresight, Mr. J. Ragunandan has directed the enterprise's expansion, establishing an indelible legacy of trust, ethical governance, and strategic asset creation across regions.</p>
         </div>
@@ -3074,7 +3075,7 @@
         </div>
         <div class="leader-content">
           <span class="leader-role">Managing Director</span>
-          <h3 class="leader-name">R. Jeyaviswadarsan</h3>
+          <h3 class="leader-name">R.&nbsp;Jeyaviswadarsan</h3>
           <p class="leader-quote">"We build for tomorrow by mastering technology, precision engineering, and customer satisfaction today."</p>
           <p class="leader-bio">Pioneering modern operational methodologies and digital construction innovation, Mr. R. Jeyaviswadarsan drives Viswa Groups' diversified portfolio into its next era of high-growth expansion.</p>
         </div>
