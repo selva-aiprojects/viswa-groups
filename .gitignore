@@ -7,3 +7,6 @@ node_modules/
 .t*.png
 .leadcheck.js
 test-*.html
+
+# Admin credentials — never commit
+ADMIN_CREDENTIALS.md
