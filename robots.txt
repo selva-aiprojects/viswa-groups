@@ -1,3 +1,8 @@
 # Viswa Groups — Web Crawler Directives & Robots Policy
 User-agent: *
 Allow: /
+
+# Admin-only project submission portal — keep out of search results
+Disallow: /submit-project.html
+
+Sitemap: https://viswagroups.com/sitemap.xml
