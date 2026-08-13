@@ -3,4 +3,7 @@ node_modules/
 .vercel
 *.log
 
-.vercel
+.bare*.png
+.t*.png
+.leadcheck.js
+test-*.html

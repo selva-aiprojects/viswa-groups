@@ -50,13 +50,13 @@
           "@type": "Person",
           "name": "J Ragunandan",
           "jobTitle": "Chairman",
-          "image": "https://viswagroups.com/assets/CM.PNG"
+          "image": "https://viswagroups.com/assets/chairman_photo.png"
         },
         {
           "@type": "Person",
           "name": "R Jeyaviswadarsan",
           "jobTitle": "Managing Director",
-          "image": "https://viswagroups.com/assets/MD.PNG"
+          "image": "https://viswagroups.com/assets/md_photo.png"
         }
       ]
     },
@@ -98,8 +98,8 @@
 
     --hero-img-brightness: 0.78;
     --hero-img-contrast: 1.05;
-    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(11, 14, 20, 0.25) 0%, rgba(11, 14, 20, 0.78) 80%),
-                        linear-gradient(to bottom, rgba(11, 14, 20, 0.4) 0%, #0B0E14 100%);
+    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(11, 14, 20, 0.10) 0%, rgba(11, 14, 20, 0.65) 80%),
+                        linear-gradient(to bottom, rgba(11, 14, 20, 0.15) 0%, #0B0E14 100%);
     --header-scrolled-bg: rgba(11, 14, 20, 0.94);
     
     --radius-sm: 4px;
@@ -138,8 +138,8 @@
 
     --hero-img-brightness: 0.88;
     --hero-img-contrast: 1.02;
-    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(248, 250, 252, 0.35) 0%, rgba(248, 250, 252, 0.82) 80%),
-                        linear-gradient(to bottom, rgba(248, 250, 252, 0.5) 0%, #F8FAFC 100%);
+    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(248, 250, 252, 0.20) 0%, rgba(248, 250, 252, 0.72) 80%),
+                        linear-gradient(to bottom, rgba(248, 250, 252, 0.3) 0%, #F8FAFC 100%);
     --header-scrolled-bg: rgba(255, 255, 255, 0.94);
 
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -166,8 +166,8 @@
 
     --hero-img-brightness: 0.80;
     --hero-img-contrast: 1.08;
-    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(10, 25, 47, 0.3) 0%, rgba(10, 25, 47, 0.8) 80%),
-                        linear-gradient(to bottom, rgba(10, 25, 47, 0.45) 0%, #0A192F 100%);
+    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(10, 25, 47, 0.15) 0%, rgba(10, 25, 47, 0.68) 80%),
+                        linear-gradient(to bottom, rgba(10, 25, 47, 0.25) 0%, #0A192F 100%);
     --header-scrolled-bg: rgba(10, 25, 47, 0.94);
 
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -194,8 +194,8 @@
 
     --hero-img-brightness: 0.80;
     --hero-img-contrast: 1.08;
-    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(6, 30, 20, 0.3) 0%, rgba(6, 30, 20, 0.82) 80%),
-                        linear-gradient(to bottom, rgba(6, 30, 20, 0.45) 0%, #061E14 100%);
+    --hero-overlay-bg: radial-gradient(circle at 70% 30%, rgba(6, 30, 20, 0.15) 0%, rgba(6, 30, 20, 0.70) 80%),
+                        linear-gradient(to bottom, rgba(6, 30, 20, 0.25) 0%, #061E14 100%);
     --header-scrolled-bg: rgba(6, 30, 20, 0.94);
 
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -577,11 +577,11 @@
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     background: var(--bg-primary);
     color: var(--text-main);
-    padding-top: 130px;
-    padding-bottom: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow: hidden;
   }
 
@@ -595,7 +595,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 30%;
     filter: brightness(var(--hero-img-brightness)) contrast(var(--hero-img-contrast));
     transform: scale(1.03);
     animation: zoomBg 25s ease-out infinite alternate;
@@ -616,7 +616,9 @@
   .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 860px;
+    max-width: 760px;
+    padding-bottom: 60px;
+    padding-top: 200px;
   }
 
   .hero-badge {
@@ -646,30 +648,23 @@
 
   .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 4.2vw, 3.85rem);
+    font-size: clamp(2.75rem, 5.5vw, 4.75rem);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin-bottom: 18px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
   }
 
   .hero-subtitle {
     font-family: var(--font-serif);
-    font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
     font-style: italic;
     color: var(--text-main);
-    opacity: 0.95;
-    margin-bottom: 12px;
+    opacity: 0.9;
+    margin-bottom: 32px;
     font-weight: 400;
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-    color: var(--text-muted);
-    max-width: 620px;
-    margin-bottom: 36px;
-    line-height: 1.65;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   }
 
   .hero-actions {
@@ -683,12 +678,12 @@
   .metrics-bar {
     position: relative;
     z-index: 3;
-    margin-top: 80px;
-    padding-top: 40px;
-    border-top: 1px solid var(--gold-border);
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 24px;
   }
 
   .metric-item {
@@ -697,26 +692,28 @@
 
   .metric-num {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 700;
     color: var(--gold-light);
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     display: flex;
     align-items: baseline;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
 
   .metric-num span {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--gold-primary);
   }
 
   .metric-label {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-muted);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
   }
 
   /* ===== CORPORATE LEGACY SECTION ===== */
@@ -725,51 +722,52 @@
     position: relative;
   }
 
-  .grid-2col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  .legacy-intro {
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto 60px;
   }
 
   .legacy-quote-card {
     background: var(--bg-card);
     border: 1px solid var(--bg-card-border);
     border-left: 4px solid var(--gold-primary);
-    padding: 44px;
+    padding: 36px 40px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     position: relative;
     color: var(--text-main);
+    max-width: 700px;
+    margin: 0 auto 70px;
   }
 
   .quote-icon {
     position: absolute;
-    top: 24px;
-    right: 28px;
-    width: 48px;
-    height: 48px;
+    top: 20px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
     color: rgba(197, 160, 89, 0.18);
   }
 
   .legacy-quote-text {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--text-main);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .legacy-quote-author {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
   }
 
   .author-avatar {
-    width: 68px;
-    height: 68px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 38%;
@@ -780,69 +778,135 @@
 
   .author-info h4 {
     font-family: var(--font-heading);
-    font-size: 1.0625rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-main);
   }
 
   .author-info p {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--gold-dark);
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  .pillar-card {
-    background: var(--bg-card);
-    padding: 32px 28px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--bg-card-border);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-
-  .pillar-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--gold-border);
-  }
-
-  .pillar-icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    background: rgba(197, 160, 89, 0.15);
-    color: var(--gold-primary);
+  /* Timeline Milestone Layout */
+  .timeline {
+    position: relative;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold-primary) 10%, var(--gold-primary) 90%, transparent 100%);
+    opacity: 0.4;
+  }
+
+  .timeline-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
+    text-align: center;
+    position: relative;
+    padding: 0 12px;
   }
 
-  .pillar-icon-box svg {
-    width: 24px;
-    height: 24px;
+  .timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 3px solid var(--gold-primary);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    transition: var(--transition);
+    box-shadow: 0 0 0 4px var(--bg-surface);
   }
 
-  .pillar-title {
+  .timeline-item:hover .timeline-dot {
+    background: var(--gold-primary);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.5), 0 0 0 4px var(--bg-surface);
+    transform: scale(1.2);
+  }
+
+  .timeline-year {
     font-family: var(--font-heading);
-    font-size: 1.125rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .timeline-title {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
     font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    line-height: 1.3;
   }
 
-  .pillar-desc {
-    font-size: 0.9375rem;
+  .timeline-desc {
+    font-size: 0.8125rem;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.5;
+    max-width: 180px;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding-top: 0;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      top: 0;
+      bottom: 0;
+      left: 8px;
+      right: auto;
+      width: 2px;
+      height: auto;
+    }
+
+    .timeline-item {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+      padding: 0 0 36px 0;
+      gap: 20px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 4px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .timeline-item-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-desc {
+      max-width: 100%;
+    }
   }
 
   /* ===== VENTURES SHOWCASE ===== */
@@ -854,176 +918,162 @@
   .ventures-header {
     text-align: center;
     max-width: 740px;
-    margin: 0 auto 50px;
+    margin: 0 auto 70px;
   }
 
-  .venture-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 44px;
-    flex-wrap: wrap;
-  }
-
-  .tab-btn {
-    padding: 12px 26px;
-    background: var(--bg-card);
-    border: 1px solid var(--bg-card-border);
-    border-radius: var(--radius-full);
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .tab-btn:hover {
-    color: var(--gold-primary);
-    border-color: var(--gold-primary);
-  }
-
-  .tab-btn.active {
-    background: var(--gold-gradient);
-    color: #FFFFFF;
-    border-color: transparent;
-    box-shadow: 0 4px 16px rgba(197, 160, 89, 0.35);
-  }
-
-  .ventures-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-
-  .venture-card {
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--bg-card-border);
-    transition: var(--transition);
+  /* Luxury Portfolio Showcase */
+  .ventures-showcase {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
-  .venture-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--gold-border);
-  }
-
-  .venture-img-box {
-    position: relative;
-    height: 240px;
+  .venture-showcase-item {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 480px;
+    border-bottom: 1px solid var(--bg-card-border);
     overflow: hidden;
   }
 
-  .venture-img-box img {
+  .venture-showcase-item:first-child {
+    border-top: 1px solid var(--bg-card-border);
+  }
+
+  .venture-showcase-item:nth-child(even) {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .venture-showcase-item:nth-child(even) .venture-showcase-img {
+    order: 2;
+  }
+
+  .venture-showcase-item:nth-child(even) .venture-showcase-content {
+    order: 1;
+  }
+
+  .venture-showcase-img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .venture-showcase-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .venture-card:hover .venture-img-box img {
-    transform: scale(1.08);
+  .venture-showcase-item:hover .venture-showcase-img img {
+    transform: scale(1.05);
   }
 
-  .venture-tag {
+  .venture-showcase-tag {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    padding: 6px 14px;
-    background: rgba(11, 14, 20, 0.85);
-    backdrop-filter: blur(8px);
-    color: #E5C158;
-    font-size: 0.75rem;
+    top: 24px;
+    left: 24px;
+    padding: 8px 18px;
+    background: rgba(11, 14, 20, 0.8);
+    backdrop-filter: blur(12px);
+    color: var(--gold-light);
+    font-size: 0.6875rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     border-radius: var(--radius-sm);
     border: 1px solid rgba(197, 160, 89, 0.3);
   }
 
-  .venture-body {
-    padding: 32px 28px;
+  .venture-showcase-content {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    justify-content: center;
+    padding: 60px 56px;
+    background: var(--bg-card);
   }
 
-  .venture-num {
+  .venture-showcase-name {
     font-family: var(--font-heading);
-    font-size: 0.8125rem;
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: var(--gold-primary);
-    letter-spacing: 0.2em;
-    margin-bottom: 8px;
-  }
-
-  .venture-title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    line-height: 1.15;
   }
 
-  .venture-desc {
-    font-size: 0.9375rem;
+  .venture-showcase-tagline {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-style: italic;
     color: var(--text-muted);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     line-height: 1.6;
-    flex-grow: 1;
+    max-width: 400px;
   }
 
-  .venture-specs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding-top: 18px;
-    border-top: 1px solid var(--bg-card-border);
-    margin-bottom: 24px;
-  }
-
-  .spec-item {
-    font-size: 0.8125rem;
-  }
-
-  .spec-label {
-    color: var(--text-muted);
-    display: block;
-  }
-
-  .spec-val {
-    font-weight: 700;
-    color: var(--text-main);
-  }
-
-  .venture-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .link-btn {
+  .venture-showcase-cta {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 0.875rem;
     font-weight: 700;
     color: var(--gold-primary);
-    letter-spacing: 0.05em;
-    transition: gap 0.3s ease;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: gap 0.3s ease, color 0.3s ease;
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
   }
 
-  .link-btn:hover {
-    gap: 10px;
+  .venture-showcase-cta:hover {
+    gap: 14px;
     color: var(--gold-light);
+  }
+
+  .venture-showcase-cta svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .venture-showcase-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 1024px) {
+    .venture-showcase-item,
+    .venture-showcase-item:nth-child(even) {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .venture-showcase-item:nth-child(even) .venture-showcase-img {
+      order: 0;
+    }
+
+    .venture-showcase-item:nth-child(even) .venture-showcase-content {
+      order: 0;
+    }
+
+    .venture-showcase-img {
+      height: 340px;
+    }
+
+    .venture-showcase-content {
+      padding: 40px 32px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .venture-showcase-img {
+      height: 260px;
+    }
+
+    .venture-showcase-content {
+      padding: 32px 24px;
+    }
   }
 
   /* ===== LEADERSHIP SECTION ===== */
@@ -1044,7 +1094,7 @@
     box-shadow: var(--shadow-md);
     border: 1px solid var(--bg-card-border);
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 280px 1fr;
     transition: var(--transition);
   }
 
@@ -1073,15 +1123,7 @@
     transform: scale(1.05);
   }
 
-  /* New portrait framing — CM has tan headroom above the head, MD fills the frame edge-to-edge */
-  .leader-card.leader-cm .leader-photo img {
-    object-position: 40% 20%;
-  }
-
-  .leader-card.leader-md .leader-photo img {
-    object-position: 40% top;
-  }
-
+  /* Tight head-and-shoulders portraits; center-top framing keeps faces fully visible at all sizes */
   .leader-content {
     padding: 32px 28px;
     display: flex;
@@ -1426,6 +1468,31 @@
     line-height: 1.6;
   }
 
+  .footer-social-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .footer-social-row .social-icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .footer-social-row .social-icon-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
   .footer-col-title {
     font-family: var(--font-heading);
     font-size: 0.875rem;
@@ -1497,11 +1564,8 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
-    .grid-2col, .contact-grid {
+    .contact-grid {
       grid-template-columns: 1fr;
-    }
-    .ventures-grid {
-      grid-template-columns: repeat(2, 1fr);
     }
     .leadership-grid {
       grid-template-columns: 1fr;
@@ -1528,9 +1592,7 @@
     .header-actions .btn-primary {
       display: none;
     }
-    .ventures-grid {
-      grid-template-columns: 1fr;
-    }
+
     .leader-photo {
       height: 300px;
       min-height: 250px;
@@ -1974,14 +2036,8 @@
   <div class="hero-overlay"></div>
 
   <div class="container hero-content">
-    <div class="hero-badge">
-      <img src="assets/favicon.png" alt="Viswa Groups Logo">
-      <span>Enterprise Portfolio</span>
-    </div>
-
     <h1 class="hero-title">Building Tomorrow.<br><span class="text-gold">Creating Enduring Value.</span></h1>
-    <p class="hero-subtitle">Excellence across Real Estate, Commercial Development &amp; Luxury Hospitality</p>
-    <p class="hero-desc">Viswa Groups is a premier multi-disciplinary enterprise committed to architectural perfection, transparent governance, and sustainable investments that redefine urban landscapes.</p>
+    <p class="hero-subtitle">Excellence across Real Estate, Development &amp; Luxury Hospitality</p>
 
     <div class="hero-actions">
       <a href="#ventures" class="btn btn-primary">
@@ -2016,56 +2072,64 @@
 <!-- ===== CORPORATE LEGACY SECTION ===== -->
 <section class="section-padding legacy-section" id="legacy">
   <div class="container">
-    <div class="grid-2col animate-on-scroll">
-      <div>
-        <span class="eyebrow">Our Governance &amp; Legacy</span>
-        <h2 class="heading-lg">Pioneering standard of excellence for over two decades</h2>
-        <p class="subheading" style="margin-bottom: 24px;">At Viswa Groups, every landmark project represents a promise of durability, financial security, and aesthetic value. We integrate forward-thinking design with timeless craftsmanship.</p>
-        
-        <div class="legacy-quote-card">
-          <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-          <p class="legacy-quote-text">"Strong leadership is built on integrity, guided by vision, and ensured by the trust it earns."</p>
-          <div class="legacy-quote-author">
-            <img src="assets/chairman_headshot.png" alt="J. Ragunandan" class="author-avatar">
-            <div class="author-info">
-              <h4>J. Ragunandan</h4>
-              <p>Chairman, Viswa Groups</p>
-            </div>
-          </div>
+    <div class="legacy-intro animate-on-scroll">
+      <span class="eyebrow">Our Governance &amp; Legacy</span>
+      <h2 class="heading-lg">Pioneering standard of excellence for over two decades</h2>
+      <p class="subheading">Every landmark project represents a promise of durability, financial security, and aesthetic value.</p>
+    </div>
+
+    <div class="legacy-quote-card animate-on-scroll">
+      <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      <p class="legacy-quote-text">"Strong leadership is built on integrity, guided by vision, and ensured by the trust it earns."</p>
+      <div class="legacy-quote-author">
+        <img src="assets/chairman_headshot.png" alt="J. Ragunandan" class="author-avatar">
+        <div class="author-info">
+          <h4>J. Ragunandan</h4>
+          <p>Chairman, Viswa Groups</p>
         </div>
       </div>
+    </div>
 
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="pillar-title">Architectural Integrity</h3>
-          <p class="pillar-desc">Every structure is engineered with sustainable materials and timeless aesthetic frameworks.</p>
+    <!-- Horizontal Timeline Milestones -->
+    <div class="timeline animate-on-scroll">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+          <div class="timeline-year">2000</div>
+          <div class="timeline-title">Foundation Laid</div>
+          <div class="timeline-desc">Viswa Groups established with a vision to redefine quality in construction</div>
         </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3 class="pillar-title">Engineering Precision</h3>
-          <p class="pillar-desc">Rigorous quality benchmarks and zero-compromise construction timelines across projects.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+          <div class="timeline-year">2005</div>
+          <div class="timeline-title">First Landmark</div>
+          <div class="timeline-desc">Delivered the first signature residential community with 100% client trust</div>
         </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="pillar-title">Client-Centric Trust</h3>
-          <p class="pillar-desc">Transparent legal documentation, on-time delivery guarantees, and lifelong partnership.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+          <div class="timeline-year">2012</div>
+          <div class="timeline-title">Hospitality Launch</div>
+          <div class="timeline-desc">Expanded into luxury hospitality and executive wellness retreats</div>
         </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          </div>
-          <h3 class="pillar-title">Sustainable Value</h3>
-          <p class="pillar-desc">Strategic location acquisitions driving capital appreciation for owners and institutional partners.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-title">10M+ Sq. Ft.</div>
+          <div class="timeline-desc">Crossed ten million sq. ft. of delivered residential and commercial space</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">Next Horizon</div>
+          <div class="timeline-desc">Pioneering sustainable design and pan-India enterprise expansion</div>
         </div>
       </div>
     </div>
@@ -2078,106 +2142,59 @@
     <div class="ventures-header animate-on-scroll">
       <span class="eyebrow">Our Enterprise Portfolio</span>
       <h2 class="heading-lg">Three Core Disciplines, One Unwavering Standard</h2>
-      <p class="subheading">Viswa Groups strategically operates across residential real estate, commercial infrastructure development, and luxury hospitality retreats.</p>
+      <p class="subheading">Strategically operating across residential real estate, commercial infrastructure, and luxury hospitality.</p>
     </div>
 
-    <!-- Filter Tabs -->
-    <div class="venture-tabs animate-on-scroll">
-      <button class="tab-btn active" onclick="filterVentures('all', this)">All Disciplines</button>
-      <button class="tab-btn" onclick="filterVentures('realestate', this)">Real Estate</button>
-      <button class="tab-btn" onclick="filterVentures('developers', this)">Developers</button>
-      <button class="tab-btn" onclick="filterVentures('hospitality', this)">Hospitality</button>
-    </div>
+    <!-- Luxury Portfolio Showcase -->
+    <div class="ventures-showcase animate-on-scroll">
 
-    <!-- Grid of Venture Cards -->
-    <div class="ventures-grid animate-on-scroll">
-      
-      <!-- Card 1: Real Estate -->
-      <article class="venture-card" data-category="realestate">
-        <div class="venture-img-box">
+      <!-- Venture 1: Real Estate -->
+      <div class="venture-showcase-item">
+        <div class="venture-showcase-img">
           <img src="assets/venture_realestate.png" alt="Viswa Real Estate Luxury Residences">
-          <span class="venture-tag">Real Estate</span>
+          <span class="venture-showcase-tag">Real Estate</span>
         </div>
-        <div class="venture-body">
-          <span class="venture-num">01 — RESIDENTIAL &amp; ESTATES</span>
-          <h3 class="venture-title">Viswa Real Estate</h3>
-          <p class="venture-desc">Creating premium residential gated communities, sky villas, and plotted developments tailored for modern executive living and generational investment security.</p>
-          <div class="venture-specs">
-            <div class="spec-item">
-              <span class="spec-label">Focus Area</span>
-              <span class="spec-val">Luxury Housing</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Delivered</span>
-              <span class="spec-val">5M+ Sq. Ft.</span>
-            </div>
-          </div>
-          <div class="venture-footer">
-            <button class="link-btn" onclick="openModal('Viswa Real Estate Brochure')">
-              Request Brochure
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
+        <div class="venture-showcase-content">
+          <h3 class="venture-showcase-name">Viswa Real Estate</h3>
+          <p class="venture-showcase-tagline">Premium residential gated communities, sky villas, and plotted developments tailored for modern executive living.</p>
+          <button class="venture-showcase-cta" onclick="openModal('Viswa Real Estate Brochure')">
+            Request Brochure
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </div>
-      </article>
+      </div>
 
-      <!-- Card 2: Developers -->
-      <article class="venture-card" data-category="developers">
-        <div class="venture-img-box">
+      <!-- Venture 2: Developers -->
+      <div class="venture-showcase-item">
+        <div class="venture-showcase-img">
           <img src="assets/venture_developers.png" alt="Viswa Commercial Developers">
-          <span class="venture-tag">Developers</span>
+          <span class="venture-showcase-tag">Developers</span>
         </div>
-        <div class="venture-body">
-          <span class="venture-num">02 — COMMERCIAL &amp; INFRASTRUCTURE</span>
-          <h3 class="venture-title">Viswa Developers</h3>
-          <p class="venture-desc">State-of-the-art commercial corporate towers, technology parks, and turnkey industrial spaces engineered for seamless operational efficiency.</p>
-          <div class="venture-specs">
-            <div class="spec-item">
-              <span class="spec-label">Focus Area</span>
-              <span class="spec-val">Grade-A Commercial</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Projects</span>
-              <span class="spec-val">12+ Completed</span>
-            </div>
-          </div>
-          <div class="venture-footer">
-            <button class="link-btn" onclick="openModal('Viswa Developers Partnership')">
-              Partner With Us
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
+        <div class="venture-showcase-content">
+          <h3 class="venture-showcase-name">Viswa Developers</h3>
+          <p class="venture-showcase-tagline">State-of-the-art corporate towers, technology parks, and turnkey industrial spaces engineered for efficiency.</p>
+          <button class="venture-showcase-cta" onclick="openModal('Viswa Developers Partnership')">
+            Partner With Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </div>
-      </article>
+      </div>
 
-      <!-- Card 3: Hospitality -->
-      <article class="venture-card" data-category="hospitality">
-        <div class="venture-img-box">
+      <!-- Venture 3: Hospitality -->
+      <div class="venture-showcase-item">
+        <div class="venture-showcase-img">
           <img src="assets/venture_hospitality.png" alt="Viswa Hospitality Resort">
-          <span class="venture-tag">Hospitality</span>
+          <span class="venture-showcase-tag">Hospitality</span>
         </div>
-        <div class="venture-body">
-          <span class="venture-num">03 — FINE LIVING &amp; RETREATS</span>
-          <h3 class="venture-title">Viswa Hospitality</h3>
-          <p class="venture-desc">Boutique luxury resorts, executive wellness retreats, and curated dining experiences built on warm Indian hospitality and uncompromising luxury standard.</p>
-          <div class="venture-specs">
-            <div class="spec-item">
-              <span class="spec-label">Focus Area</span>
-              <span class="spec-val">5-Star Experiences</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Satisfaction</span>
-              <span class="spec-val">99.8% Guest Rating</span>
-            </div>
-          </div>
-          <div class="venture-footer">
-            <button class="link-btn" onclick="openModal('Viswa Hospitality Inquiry')">
-              Explore Properties
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
+        <div class="venture-showcase-content">
+          <h3 class="venture-showcase-name">Viswa Hospitality</h3>
+          <p class="venture-showcase-tagline">Boutique luxury resorts, executive wellness retreats, and curated dining experiences built on warm Indian hospitality.</p>
+          <button class="venture-showcase-cta" onclick="openModal('Viswa Hospitality Inquiry')">
+            Explore Properties
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </div>
-      </article>
+      </div>
 
     </div>
   </div>
@@ -2197,7 +2214,7 @@
       <!-- Chairman Card -->
       <div class="leader-card leader-cm">
         <div class="leader-photo">
-          <img src="assets/CM.PNG" alt="J. Ragunandan, Chairman of Viswa Groups" loading="lazy" decoding="async">
+          <img src="assets/chairman_photo.png" alt="J. Ragunandan, Chairman of Viswa Groups" loading="lazy" decoding="async">
         </div>
         <div class="leader-content">
           <span class="leader-role">Chairman &amp; Founder</span>
@@ -2210,7 +2227,7 @@
       <!-- Managing Director Card -->
       <div class="leader-card leader-md">
         <div class="leader-photo">
-          <img src="assets/MD.PNG" alt="R. Jeyaviswadarsan, Managing Director of Viswa Groups" loading="lazy" decoding="async">
+          <img src="assets/md_photo.png" alt="R. Jeyaviswadarsan, Managing Director of Viswa Groups" loading="lazy" decoding="async">
         </div>
         <div class="leader-content">
           <span class="leader-role">Managing Director</span>
@@ -2387,6 +2404,20 @@
           <span class="brand-title" style="font-size:1.15rem;">VISWA <span>GROUPS</span></span>
         </a>
         <p>Building tomorrow, creating enduring value across Real Estate, Commercial Development, and Luxury Hospitality.</p>
+        <div class="footer-social-row">
+          <a href="https://wa.me/919761111999?text=Hello%20Viswa%20Groups" target="_blank" rel="noopener" class="social-icon-btn social-whatsapp" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.461c-1.78 0-3.52-.479-5.042-1.385l-.361-.214-3.75.983.998-3.655-.235-.374a10.457 10.457 0 0 1-1.604-5.542c0-5.78 4.7-10.48 10.48-10.48 2.8 0 5.432 1.09 7.41 3.07 1.979 1.98 3.068 4.61 3.067 7.41 0 5.782-4.701 10.482-10.482 10.482"/></svg>
+          </a>
+          <a href="https://www.instagram.com/viswagroups?igsh=OG4yOXgwcjZqZmpl" target="_blank" rel="noopener" class="social-icon-btn social-instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path fill="url(#igGrad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="social-icon-btn social-linkedin" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.241-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="social-icon-btn social-x" title="X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
       </div>
 
       <div>
@@ -2459,21 +2490,7 @@
     mobileToggle.classList.remove('active');
   }
 
-  // Venture Filter Functionality
-  function filterVentures(category, btnEl) {
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    btnEl.classList.add('active');
-
-    const cards = document.querySelectorAll('.venture-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
+  // (Venture filter tabs removed — luxury showcase layout used instead)
 
   // Modal Dialog Actions
   const modalBackdrop = document.getElementById('inquiryModal');
