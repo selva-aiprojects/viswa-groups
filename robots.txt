@@ -3,6 +3,6 @@ User-agent: *
 Allow: /
 
 # Admin-only project submission portal — keep out of search results
-Disallow: /submit-project.html
+Disallow: /submit-project
 
 Sitemap: https://viswagroups.com/sitemap.xml
