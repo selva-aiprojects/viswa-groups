@@ -1,7 +1,7 @@
 {
   "name": "viswa-groups-website",
   "version": "1.0.0",
-  "description": "Viswa Groups - Formal & Professional Enterprise Website",
+  "description": "Viswa Group of Companies - Formal & Professional Enterprise Website",
   "main": "index.html",
   "scripts": {
     "dev": "npx -y serve .",
@@ -13,6 +13,6 @@
     "developers",
     "hospitality"
   ],
-  "author": "Viswa Groups",
+  "author": "Viswa Group of Companies",
   "license": "ISC"
 }

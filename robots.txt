@@ -1,4 +1,4 @@
-# Viswa Groups — Web Crawler Directives & Robots Policy
+# Viswa Group of Companies — Web Crawler Directives & Robots Policy
 User-agent: *
 Allow: /
 
