@@ -316,9 +316,9 @@
   /* Layout Containers */
   .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1320px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 18px;
   }
 
   .section-padding {
@@ -471,23 +471,27 @@
     box-shadow: var(--shadow-md);
   }
 
-  .header-inner {
+  .site-header .header-inner {
+    max-width: 100%;
+    padding-left: 5px;
+    margin-left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 8px;
   }
 
   .brand-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     white-space: nowrap;
     flex-shrink: 0;
+    text-decoration: none;
   }
 
   .brand-logo img {
-    height: 44px;
+    height: 42px;
     width: auto;
     transition: var(--transition);
   }
@@ -498,24 +502,26 @@
 
   .brand-title {
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: clamp(0.95rem, 2.2vw, 1.25rem);
-    letter-spacing: 0.16em;
+    font-weight: 800;
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    letter-spacing: 0.03em;
     color: var(--text-main);
-    text-transform: uppercase;
     white-space: nowrap;
     display: inline-block;
-    flex-shrink: 0;
   }
 
   .brand-title span {
     color: var(--gold-primary);
   }
 
+  .footer-brand .brand-title {
+    font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  }
+
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 8px;
     list-style: none;
     white-space: nowrap;
     flex-shrink: 0;
@@ -523,10 +529,9 @@
 
   .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--text-muted);
     position: relative;
     padding: 8px 0;
@@ -556,7 +561,7 @@
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 6px;
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -1614,26 +1619,32 @@
   }
 
   /* Responsive Adjustments */
-  @media (max-width: 1200px) {
-    .nav-menu {
-      gap: 14px;
-    }
-    .nav-link {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-    }
-    .header-actions {
-      gap: 10px;
-    }
-    .header-phone {
-      font-size: 0.75rem;
-    }
-    #currentThemeLabel {
-      display: none;
-    }
-  }
+   @media (max-width: 1200px) {
+     .brand-title {
+       font-size: 0.98rem;
+     }
+     .nav-menu {
+       gap: 10px;
+     }
+     .nav-link {
+       font-size: 0.7rem;
+       letter-spacing: 0.06em;
+     }
+     .header-actions {
+       gap: 6px;
+     }
+     .header-phone {
+       font-size: 0.7rem;
+     }
+     #currentThemeLabel {
+       display: none;
+     }
+   }
 
   @media (max-width: 1024px) {
+    .brand-title {
+      font-size: 1.15rem;
+    }
     .nav-menu, .header-phone {
       display: none;
     }
@@ -1742,11 +1753,11 @@
       padding: 52px 0;
     }
     .brand-logo img {
-      height: 36px;
+      height: 34px;
     }
     .brand-title {
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
     }
     .hero-content {
       padding-top: 110px;
@@ -1855,8 +1866,7 @@
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     padding: 10px 14px;
     border-radius: var(--radius-md);
     background: rgba(255, 255, 255, 0.03);
@@ -1920,13 +1930,13 @@
   .theme-switcher-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
+    gap: 6px;
+    padding: 6px 10px;
     background: rgba(197, 160, 89, 0.12);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-full);
     color: var(--text-main);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
     backdrop-filter: blur(10px);
@@ -1997,43 +2007,6 @@
   .theme-dot.sapphire { background: #0A192F; border: 1px solid #64FFDA; }
   .theme-dot.emerald { background: #061E14; border: 1px solid #E5C158; }
 
-  /* Floating Quick Theme Selector Widget */
-  .floating-theme-widget {
-    position: fixed;
-    bottom: 28px;
-    left: 28px;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px;
-    background: var(--bg-card);
-    border: 1px solid var(--gold-border);
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(12px);
-  }
-
-  .floating-theme-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    background: transparent;
-    color: var(--text-main);
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .floating-theme-btn:hover, .floating-theme-btn.active {
-    background: rgba(197, 160, 89, 0.25);
-    border-color: var(--gold-primary);
-    transform: scale(1.1);
-  }
 
   /* Social Media Grid & Floating Button */
   .social-links-grid {
@@ -2715,7 +2688,7 @@
   <div class="container header-inner">
     <a href="#" class="brand-logo" aria-label="Viswa Group of Companies Home">
       <img src="assets/viswa_mark.png" alt="Viswa Group of Companies Emblem Logo" style="height: 38px; width: auto; object-fit: contain;">
-      <span class="brand-title">VISWA <span>GROUP OF COMPANIES</span></span>
+      <span class="brand-title">Viswa Group of Companies</span>
     </a>
 
     <nav aria-label="Main Navigation">
@@ -3450,7 +3423,7 @@
       <div class="footer-brand">
         <a href="#" class="brand-logo" style="margin-bottom:18px;">
           <img src="assets/viswa_mark.png" alt="Viswa Group of Companies Emblem Logo" style="height:38px; width:auto; object-fit:contain;">
-          <span class="brand-title" style="font-size:1.15rem;">VISWA <span>GROUP OF COMPANIES</span></span>
+           <span class="brand-title">Viswa Group of Companies</span>
         </a>
         <p>Explore Land, Apartments &amp; Office Sites in and around Madurai &amp; Tamil Nadu. Building tomorrow, creating enduring value.</p>
         <div class="footer-social-row">
