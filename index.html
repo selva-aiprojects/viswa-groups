@@ -2734,6 +2734,7 @@
         <li><a href="#legacy" class="nav-link">Legacy</a></li>
         <li><a href="#ventures" class="nav-link">Ventures</a></li>
         <li><a href="#land-portfolio" class="nav-link">Land Portfolio</a></li>
+        <li><a href="real-estate-madurai-guide.html" class="nav-link">Madurai Guide</a></li>
         <li><a href="#leadership" class="nav-link">Leadership</a></li>
         <li><a href="#vision" class="nav-link">Vision</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -3400,20 +3401,24 @@
         <h3 class="heading-md" style="margin-bottom: 8px;">Submit an Executive Inquiry</h3>
         <p style="color: var(--text-muted); margin-bottom: 28px; font-size: 0.9375rem;">Please select your domain of interest. Our corporate relations team will respond within 24 hours.</p>
 
-        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <form id="contactForm" action="https://formsubmit.co/contactus@viswagroups.com" method="POST">
+          <input type="hidden" name="_subject" value="New executive inquiry from Viswa Groups website">
+          <input type="hidden" name="_next" value="https://viswagroups.com/?inquiry=success#contact">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="source" value="contact">
           <div class="form-group">
             <label class="form-label" for="full-name">Full Name *</label>
-            <input type="text" id="full-name" class="form-control" placeholder="e.g. Alexander Wright" required>
+            <input type="text" id="full-name" name="name" class="form-control" placeholder="e.g. Alexander Wright" required>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="phone-no">Contact Phone Number *</label>
-            <input type="tel" id="phone-no" class="form-control" placeholder="+91 98765 43210" required>
+            <input type="tel" id="phone-no" name="phone" class="form-control" placeholder="+91 98765 43210" required>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="domain-select">Domain of Interest *</label>
-            <select id="domain-select" class="form-control" required>
+            <select id="domain-select" name="interest" class="form-control" required>
               <option value="" disabled selected>Select an option</option>
               <option value="Real Estate">Real Estate Residential Acquisition</option>
               <option value="Commercial Development">Commercial / Office Park Development</option>
@@ -3425,7 +3430,7 @@
 
           <div class="form-group">
             <label class="form-label" for="message">Message Details</label>
-            <textarea id="message" class="form-control" placeholder="Share your inquiry or requirements..."></textarea>
+            <textarea id="message" name="message" class="form-control" placeholder="Share your inquiry or requirements..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -3450,18 +3455,22 @@
     <h3 class="heading-md" id="modalTitle" style="margin-bottom: 12px;">Request Portfolio Information</h3>
     <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 24px;">Please enter your contact details below to receive executive brochures, floor plans, and investment datasheets.</p>
 
-    <form onsubmit="handleModalSubmit(event)">
+    <form id="modalForm" action="https://formsubmit.co/contactus@viswagroups.com" method="POST">
+      <input type="hidden" name="_subject" value="New brochure or consultation request from Viswa Groups website">
+      <input type="hidden" name="_next" value="https://viswagroups.com/?inquiry=success">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="source" value="modal">
       <div class="form-group">
         <label class="form-label" for="modal-name">Full Name *</label>
-        <input type="text" id="modal-name" class="form-control" required>
+        <input type="text" id="modal-name" name="name" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="form-label" for="modal-email">Email Address *</label>
-        <input type="email" id="modal-email" class="form-control" required>
+        <input type="email" id="modal-email" name="email" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="form-label" for="modal-phone">Phone Number *</label>
-        <input type="tel" id="modal-phone" class="form-control" required>
+        <input type="tel" id="modal-phone" name="phone" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
     </form>
@@ -3584,22 +3593,54 @@
     if (e.target === modalBackdrop) closeModal();
   });
 
-  // Contact Form Submission Handling
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    const toast = document.getElementById('formToast');
-    toast.classList.add('success');
-    document.getElementById('contactForm').reset();
-    setTimeout(() => {
-      toast.classList.remove('success');
-    }, 5000);
+  async function submitLead(form, successMessage) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Submission failed');
+      return result;
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
   }
 
-  function handleModalSubmit(e) {
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert('Thank you! Your request has been logged. Our corporate manager will connect shortly.');
-    closeModal();
-  }
+    const form = e.currentTarget;
+    const toast = document.getElementById('formToast');
+    try {
+      await submitLead(form, 'Send Executive Message');
+      toast.textContent = 'Thank you. Your inquiry has been sent to our executive team.';
+      toast.classList.add('success');
+      form.reset();
+    } catch (error) {
+      toast.textContent = 'We could not send your inquiry. Please call or WhatsApp us directly.';
+      toast.classList.add('success');
+    }
+    setTimeout(() => toast.classList.remove('success'), 6000);
+  });
+
+  document.getElementById('modalForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      await submitLead(e.currentTarget, 'Submit Request');
+      e.currentTarget.reset();
+      closeModal();
+      alert('Thank you. Your request has been sent to our team.');
+    } catch (error) {
+      alert('We could not send your request. Please call or WhatsApp us directly.');
+    }
+  });
 
   // Scroll Animations Observer & Counter Animation
   const observerOptions = {
