@@ -1,5 +1,3 @@
-const DESTINATION_EMAIL = 'contactus@viswagroups.com';
-
 function jsonResponse(body, status = 200) {
   return {
     status,
@@ -13,7 +11,7 @@ module.exports = async function handler(request, response) {
     return response.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!process.env.RESEND_API_KEY) {
+  if (!process.env.RESEND_API_KEY || !process.env.ORG_TO_EMAIL) {
     return response.status(500).json({ error: 'Email service is not configured' });
   }
 
@@ -48,7 +46,7 @@ module.exports = async function handler(request, response) {
       },
       body: JSON.stringify({
         from: process.env.RESEND_FROM || process.env.RESEND_FROM_EMAIL || 'Viswa Website <onboarding@resend.dev>',
-        to: [DESTINATION_EMAIL],
+        to: [process.env.ORG_TO_EMAIL],
         subject,
         text: details,
         reply_to: email || undefined
