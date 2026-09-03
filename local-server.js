@@ -73,6 +73,16 @@ const server = http.createServer((request, response) => {
   serveFile(request, response);
 });
 
-server.listen(port, () => {
-  console.log(`Local server running at http://localhost:${port}`);
-});
+function startServer(currentPort) {
+  server.removeAllListeners('listening');
+  server.once('listening', () => {
+    console.log(`Local server running at http://localhost:${currentPort}`);
+  });
+  server.once('error', (error) => {
+    if (error.code !== 'EADDRINUSE') throw error;
+    server.close(() => startServer(currentPort + 1));
+  });
+  server.listen(currentPort);
+}
+
+startServer(port);
